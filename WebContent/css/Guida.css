@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+body {
+  font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;
+  background-image: url('../img/sfondo.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#box {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+    rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+  margin: auto;
+  margin-left: 10%;
+}
+
+.mybutton {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+table{
+	border-radius: 1.2em;
+}
+
+@media screen and (max-width: 1000px){
+  #eventoButton{
+    margin-left: 10%;
+  }
+  
+  #eventTable{
+    margin-left: 5%;
+  }
+}

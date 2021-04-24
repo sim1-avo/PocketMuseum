@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+		body{
+			background-image:url('../img/sfondo.jpg');
+			background-repeat: no-repeat;
+			background-position:center;;
+			margin-top: 8%;
+			
+		}
+		
+		#copyright{
+			color: white;
+		}
+		
+		.copertina{
+			width: 80%;
+			height: 80%;
+			margin-left: 10%;
+			border-radius: 1.05em;
+		}
+		
+		img{
+			width: 80%;
+			height: 80%;
+		}
+		
+		#descrizione{
+			color: white;
+			margin-left: 3%;
+			width: 80%;
+			height: 80%;
+			
+		}
+		.esterno{
+			background-color: #343a40;
+			opacity:0.85!important;
+			width:90%;
+		}
+		
+		.checked {
+		  color: orange!important;
+		}
+		
+		#recensioni{
+			margin-left:20%;
+			margin-bottom: 10%;
+		}
+		
+		.fa-star{
+			width: 15% !important;
+			height: 15% !important;
+			color:#545b62
+		}
+		
+		.freccia{
+			margin-left: 35%;
+			width: 25% !important;
+			height: 25% !important;
+			color: white;
+		}
+		
+		a:hover{
+			color: #fed136 !important;
+		}
+		
+		@media only screen and (max-width: 991px){
+			body{
+				margin-top: 18%;
+			}
+			
+			#social{
+				display: none;
+			}
+			
+			.freccia{
+				display: none;
+			}
+		
+		}
+

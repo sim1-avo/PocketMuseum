@@ -1,0 +1,36 @@
+@charset "ISO-8859-1";
+#tablePageBiglietti{
+	width:40%;
+	margin-left:5%;
+}
+#bodyPageBiglietti{
+		background-image:url('../img/sfondo.jpg');
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		
+		}
+#footerPageBiglietti{
+    clear: both;
+    position: relative;
+    margin-top: 30%;
+}
+
+.card{
+	width:30%;
+	float:right;
+	
+	background-color: #454d55!important;
+	color:white;
+}
+
+#block_container
+{
+   	width:100%
+}
+#bloc1, #bloc2
+{
+    display:inline;
+}
+#bloc2{
+	display:none;
+}

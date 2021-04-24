@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+body{
+	background-image: url('../img/sfondo.jpg');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	
+}
+
+
+
+#inserimentoCodice{
+	padding: 3%;
+	text-align: center;
+	color: white;
+}
+#spanCode{
+	font-size: 1.2em;
+	color: white;;
+}
+
+#codButton{
+	color: black !important;
+	width: 90%;
+}
+
+#descrizioneMuseo{
+	padding: 2%;
+	text-align: center;
+	border-radius: 1.2em;
+	color: white;
+	height: 80%;
+}
+
+h5 {
+	font-size:medium;
+	 text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000"
+}
+
+h2 {
+	font-size:medium;
+	 text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000"
+}
+
+h4 {
+	font-size:medium;
+	 text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000"
+}
+
+.btn {
+	font-size:medium;
+	font-weight:bold;
+	 text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000"
+}

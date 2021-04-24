@@ -1,0 +1,22 @@
+@charset "ISO-8859-1";
+#bodyPageEvent{
+		background-image:url('../img/sfondo.jpg');
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		
+		
+}
+
+#footerPageEvent{
+	
+ 	clear: both;
+    position: relative;
+    margin-top: 0px;
+}
+
+
+#copertina img{
+	width: 30%;
+	height: 15%;
+	opacity: 1;
+}

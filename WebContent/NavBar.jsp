@@ -52,8 +52,10 @@ if(request.getSession(false).getAttribute("utente")!=null) {
 		    <span class="navbar-toggler-icon"></span>
 		  </button>
 		  <div class="collapse navbar-collapse" id="navbarNav">
+
+		  <!-- cambiare con != null -->
 	     	<%
-          		if(session.getAttribute("codiceValido") != null){ 
+          		if(session.getAttribute("codiceValido") == null){
        	   	%>
 	           	<form action="CercaOpera" class="form-inline" style="height:10px; margin-bottom:20px">
 				    <input name="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

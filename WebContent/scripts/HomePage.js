@@ -13,16 +13,9 @@ $(document).on("click", "#codButton", function(){
                 + currentdate.getSeconds();
     $("#data").val(datetime);
     console.log(datetime);
-	 $.post('/PocketMuseum_C09/CodiceServlet', {data:datetime, codice: codice}, function(responseText) {
-		if(responseText=="non trovato"){
-			
-			$("#prova").fadeIn(1000);
-			
-			$("#prova").html("Codice non valido");
-			 
-     		$("#prova").fadeOut(3000);
-		}else{
-			window.location.replace("./PageOpera.jsp?id=1");
-		}
-     });
+	 $.post('/PocketMuseum_C09/CodiceServlet', {
+	 data:datetime,
+	 codice: codice
+	 },
+	 );
 })

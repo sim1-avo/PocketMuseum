@@ -128,34 +128,34 @@
 	</div>
 	<footer id="footerPageBiglietti"><jsp:include page="Footer.jsp"></jsp:include></footer>
 </body>
-<script>
 
+<script>
 function validate() {
-	
+
 	var data_scadenza = document.getElementById('scadenza').value;
-	
+
 	var arr1 = data_scadenza.split("/");
-	
+
 	var mese = Number(arr1[0]);
-	
+
 	if (mese < 1 || mese > 12) {
 		document.getElementById('textarea-error').innerHTML='Mese non valido';
 		return false;
 	}
-	
+
 	var anno = Number(arr1[1]);
-	
+
 	anno += 2000;
-	
+
 	var today = new Date();
-	
+
 	var cur_anno = Number(today.getFullYear());
-	
+
 	if (anno < cur_anno) {
 		document.getElementById('textarea-error').innerHTML='Carta scaduta';
 		return false;
 	}
-	
+
 	if (anno == cur_anno) {
 		var cur_mese = Number(today.getMonth()+1);
 		if (mese < cur_mese) {
@@ -183,7 +183,7 @@ function selezionaTurno(){
 		xhr.onreadystatechange = function() {
 			if (xhr.readyState == 4 && xhr.status == 200) {
 				var array = xhr.responseText.split("&");
-				
+
 				if(array[0] == "false")
 					$("#opzione1").css("display","none");
 				else
@@ -207,6 +207,7 @@ function selezionaTurno(){
 		}
 		xhr.send();
 	}
+
 </script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

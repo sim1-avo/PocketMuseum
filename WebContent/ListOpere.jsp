@@ -69,10 +69,9 @@ body {
 					<tbody>
 
 						
+                            <!-- Cambiare con != null -->
+							<% if(session.getAttribute("codiceValido")!=null){ %>
 
-							<%if(session.getAttribute("codiceValido")!=null){
-						 
-					 %>
 							 <tr>
 							<td colspan="2">
 							<form action="RicercaRecensione" method="post"
@@ -95,10 +94,9 @@ body {
 								</td>
 								</tr>	
 								
-								<%
+
 					 
-					 }else if(session.getAttribute("guida")!=null){
-					 %>
+					 <%}else if(session.getAttribute("guida")!=null){%>
 							<tr>
 							<td colspan="3">
 	

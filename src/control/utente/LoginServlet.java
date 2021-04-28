@@ -49,7 +49,7 @@ public class LoginServlet extends HttpServlet {
           redirect = "BiglietteriaPersonalPage.jsp";
         } else {
           request.getSession(true).setAttribute("utente", utente);
-          redirect = "Homepage.jsp";
+          redirect = "UtentePP.jsp";
         }
       } else {
         throw new IllegalArgumentException("L'accesso non va a buon fine poichè"

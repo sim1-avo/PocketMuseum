@@ -60,12 +60,13 @@ return;
 						<h1>Login</h1>
 						<p class="text-muted">Inserisci email e password</p>
 						<input type="text" name="email" pattern="([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-]{2,})+.)+([a-zA-Z0-9]{2,})+$" 
-								title="Il campo email è errato" required placeholder="email">
+								title="Il campo email ï¿½ errato" required placeholder="email">
 						<input type="password" id="password" name="Password" pattern="([\w\W]{8,32})"
-						title="Il campo password è errato" required placeholder="Password">
+						title="Il campo password ï¿½ errato" required placeholder="Password">
 						<p id="password-error" style="color:red"></p>
 						<a class="forgot text-muted"
 							onclick="showFormPass()" href="#">Password dimenticata?</a> <br>
+
 						<a onclick="nascondilog()" class="forgot text-muted" href="#">Non
 							sei registrato? Registrati!</a>
 							 <input type="submit" name="" value="Login" href="#">
@@ -92,7 +93,7 @@ return;
 							name="VerificaPassword" pattern="([\w\W]{8,31})"
 						title="Il campo password non rispetta il formato o la lunghezza" required placeholder="verifica password">
 						<p id="textarea-error" class="help-block text-danger"></p>
-						<a onclick="nascondireg()" class="forgot text-muted" href="#">Già
+						<a onclick="nascondireg()" class="forgot text-muted" href="#">Giï¿½
 							sei registrato? Accedi!</a> <br>
 						<input id="regbutton"
 							type="submit" name="" value="Registrati" href="#">
@@ -166,7 +167,7 @@ return;
         
         xhttp.onreadystatechange = function() {
        	   	 if(xhttp.responseText === "false"){
-       	   		 document.getElementById("email-error").innerHTML="Utente già registrato"; 
+       	   		 document.getElementById("email-error").innerHTML="Utente giï¿½ registrato"; 
        	   		 return false;
        	   	}
        	   	 else{
@@ -199,7 +200,7 @@ return;
 		
 		
 		var stringa = document.getElementById("email-error").innerHTML;
-		if(stringa === "Utente già registrato") {
+		if(stringa === "Utente giï¿½ registrato") {
 			return  false;
 		}
 		
@@ -221,7 +222,7 @@ return;
 <script>
 	
 	function messaggioRecupera(){
-		if(alert("Se l'indirizzo di posta elettronica è presente nei nostri sistemi, riceverai a breve una mail con la tua password")){}
+		if(alert("Se l'indirizzo di posta elettronica ï¿½ presente nei nostri sistemi, riceverai a breve una mail con la tua password")){}
 		else{}
 	}
 	

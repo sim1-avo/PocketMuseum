@@ -1,0 +1,22 @@
+.card {
+  box-shadow: 0 4px 8px 0 black;
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  border-radius:20px;
+}
+
+.card:hover{
+  filter: drop-shadow(2px 4px 6px #ba8600);
+
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+img.imgEvento {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}

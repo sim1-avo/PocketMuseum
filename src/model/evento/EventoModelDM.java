@@ -210,4 +210,40 @@ public class EventoModelDM implements EventoModel<EventoBean> {
 
         return result;
     }
+
+    public static EventoBean doRetrieveById(int idEvento) throws SQLException {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        EventoBean bean = null;
+        String selectSql = "SELECT * FROM Evento WHERE id = ?";
+        try {
+            connection = DriverManagerConnectionPool.getConnection();
+            preparedStatement = connection.prepareStatement(selectSql);
+            preparedStatement.setString(1, String.valueOf(idEvento) );
+            System.out.println("doRetrieveById: " + preparedStatement.toString());
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                bean = new EventoBean();
+                bean.setId(rs.getInt("ID"));
+                bean.setNome(rs.getString("Nome"));
+                bean.setDataInizio(rs.getTimestamp("Data_inizio"));
+                bean.setDataFine(rs.getTimestamp("Data_fine"));
+                bean.setDescrizione(rs.getString("Descrizione"));
+                if (rs.getBlob("Immagine") != null) {
+                    bean.setImmagine(Utility.base64ImageString(Utility.blobToBytes(rs
+                            .getBlob("Immagine"))));
+                }
+            }
+        } finally {
+            try {
+                if (preparedStatement != null) {
+                    preparedStatement.close();
+                }
+            } finally {
+                DriverManagerConnectionPool.releaseConnection(connection);
+            }
+        }
+        return bean;
+    }
+
 }

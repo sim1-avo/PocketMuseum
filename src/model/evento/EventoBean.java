@@ -45,6 +45,22 @@ public class EventoBean implements Serializable {
 
     public EventoBean() {}
 
+    /** Cerca se idEvento esiste nel db e setta tutte le informazioni
+     *  dell'oggetto che chiama questo costruttore. */
+    public EventoBean(int idEvento) throws SQLException {
+        EventoBean bean = EventoModelDM.doRetrieveById(idEvento);
+        if(bean != null) {
+            this.id = bean.getId();
+            this.dataFine = bean.getDataFine();
+            this.dataInizio = bean.getDataInizio();
+            this.descrizione = bean.getDescrizione();
+            this.immagine = bean.getImmagine();
+            this.immaginePart = bean.getImmaginePart();
+            this.nome = bean.getNome();
+        }
+    }
+
+
     public int getId() {
         return id;
     }

@@ -117,4 +117,16 @@ public class EventoBean implements Serializable {
         this.dataFine = dataFine;
     }
 
+    public String getCompatibleDataInizioInput() {
+        Date date = new Date(this.dataInizio.getTime());
+        DateFormat f = new SimpleDateFormat("yyyy-MM-dd");
+        return f.format(date);
+    }
+
+    public String getCompatibleDataFineInput() {
+        Date date = new Date(this.dataFine.getTime());
+        DateFormat f = new SimpleDateFormat("yyyy-MM-dd");
+        return f.format(date);
+    }
+
 }

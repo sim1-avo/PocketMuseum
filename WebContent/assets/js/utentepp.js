@@ -10,6 +10,11 @@ $(document).ready(function(){
   /*PageUserData*/
   $("#ChangeData").hide();
   $("#annullachangepsw").hide();
+
+  /*Lato Biglietteria*/
+  /*Pagine History*/
+  $("#chartContainer").hide();
+  $("#infotkt").hide();
 });
 function ShowTour(){
         $("#history").hide();
@@ -67,4 +72,10 @@ function AnnullaChangePsw(){
 		$("#UserImg").show();
 		$("#annullachangepsw").hide();
 		$("#changepsw").show();
+}
+
+/*LATO BIGLIETTERIA*/
+/*Page History*/
+function ShowChart(){
+
 }

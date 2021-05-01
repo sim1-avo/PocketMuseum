@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,6 +30,8 @@
 
   <link rel="stylesheet" href="assets/css/cardEvents.css">
 
+  <link rel="stylesheet" href="assets/css/historyBiglietteria.css">
+
 </head>
 
 
@@ -38,6 +39,8 @@
 
 
 <%@include file="NavigationBar.jsp"%>
+
+
 <!-- TOUR -->
 <div id="tour"><%@include file="Tour.jsp"%></div>
 
@@ -52,15 +55,11 @@
 
 
 
-
-<script>
-
-</script>
-<script src="assets/js/utentepp.js"></script>
-
 <script src="assets/js/jquery-3.5.1.min.js"></script>
 
 <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+<script src="assets/js/utentepp.js"></script>
 
 <script src="assets/vendor/owl-carousel/js/owl.carousel.min.js"></script>
 

@@ -42,7 +42,7 @@ public class CercaOpera extends HttpServlet {
       }
       request.setAttribute("opere", listOpereVisibili);
       response.setContentType("text/html");
-      RequestDispatcher rd = request.getRequestDispatcher("./ListOpere.jsp");
+      RequestDispatcher rd = request.getRequestDispatcher("./OpereTour.jsp");
       rd.forward(request, response);
     } catch (Exception e) {
       e.printStackTrace();

@@ -176,6 +176,8 @@ if(request.getSession(false).getAttribute("biglietteria")==null) {
         </tr>
       </table>
     </div>
+
+
     <div class="col-md-4" class="card" id="bloccoModificaPsw">
       <form action="ModificaDati" method="get">
         <div class="card-body">
@@ -195,7 +197,8 @@ if(request.getSession(false).getAttribute("biglietteria")==null) {
         </div>
         <div class="card-body">
           <div>
-            <a href="#" id="chiudipsw" class="card-link">Chiudi</a><input
+            <a href="#" id="chiudipsw" class="card-link">Chiudi</a>
+            <input
               style="float: right" type="submit" class="btn btn-primary"
               value="Modifica">
           </div>
@@ -244,8 +247,8 @@ if(request.getSession(false).getAttribute("biglietteria")==null) {
 			var xhttp = new XMLHttpRequest();
             xhttp.open("GET","RecuperaBiglietti?inizio="+inizio+"&fine="+fine,true);
              
-            xhttp.setRequestHeader("connection","close");
-            
+            /*xhttp.setRequestHeader("connection","close");*/
+
             xhttp.onreadystatechange = function() {
                 if(xhttp.readyState == 4 && xhttp.status ==200){
                     table.innerHTML=xhttp.responseText;

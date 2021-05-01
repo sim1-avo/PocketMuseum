@@ -65,7 +65,9 @@
 		<div>
 		<div class="row" id="content">
 		  <div class="row">
-		  <%if(request.getSession().getAttribute("guida")!=null||request.getSession().getAttribute("biglietteria")!=null || bean.getStato().equals("visibile")){ %>
+		  <%if(request.getSession().getAttribute("guida")!=null
+		  ||request.getSession().getAttribute("biglietteria")!=null
+		  || bean.getStato().equals("visibile")){ %>
 		    <div class="col-sm-6">
 		    
 		    	<img class="copertina iclass" src="data:image/png;base64,<%=bean.getImmagine()%>" alt="non va">

@@ -1,5 +1,6 @@
 <%@page import="model.biglietto.BigliettoModelDM"%>
-<%@page import="model.biglietto.BigliettoModel"%>
+<%@page import="model.biglietto.BigliettoModel, java.time.LocalDate "%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,23 +18,27 @@
 
         <!-- SINISTRA 1 -->
         <div id="start-left-tour" class="col-lg-6 wow fadeInUp">
-          <h1 class="mb-4" style= "color:darkgoldenrod">Explore our museum!</h1>
-          <p class="mb-4">A new way of getting to know art. <br> A new museum experience.</p>
 
-          			<%
-				if (session.getAttribute("guida") == null && session.getAttribute("biglietteria") == null) {
-			%>
-			<%if (session.getAttribute("codiceValido") == null) { %>
-			<input type="text" class="mb-4 fw-normal" id="inputPassword2" name="inputCode" placeholder="Insert your code">
-          	<button type="submit" id="codButton" class="btn btn-primary rounded-pill">Start the tour</button>
-            <h4 style="color: red; display: none" id="prova"> Codice
-						non valido</h4><br><br>
-          <%} else {%>
-				<button type="button" style="color:black;width:90%"  onclick="window.location.href='CercaOpera?search='" class="btn btn-primary mb-2">Continua la tua visita!</button>
-				<%}} %>
+			<%if (session.getAttribute("biglietteria") == null) { %>
+                <h1 class="mb-4" style= "color:darkgoldenrod">Explore our museum!</h1>
+                <p class="mb-4">A new way of getting to know art. <br> A new museum experience.</p>
+
+                <%if (session.getAttribute("codiceValido") == null) { %>
+                <input type="text" class="mb-4 fw-normal" id="inputPassword2" name="inputCode" placeholder="Insert your code">
+                <button type="submit" id="codButton" class="btn btn-primary rounded-pill">Start the tour</button>
+                <h4 style="color: red; display: none" id="prova"> Codice
+                            non valido</h4><br><br>
+                <%} else {%>
+                    <button type="button" style="color:black;width:90%"  onclick="window.location.href='CercaOpera?search='" class="btn btn-primary mb-2">Continua la tua visita!</button>
+                <%}%>
+                <p class="mb-4">Come? Non hai ancora un biglietto? <br> Non sai cosa ti perdi, <b style="color:#ba8600">acquistalo</b> ora!</p>
+
+            <%}else{ %>
+                <h1 class="mb-4" style= "color:darkgoldenrod">Explore our museum!</h1>
+                <h5 class="mb-4"> Acquista ora un biglietto!</h5>
+            <%}%>
 
 
-          <p class="mb-4">Come? Non hai ancora un biglietto? <br> Non sai cosa ti perdi, <b style="color:#ba8600">acquistalo</b> ora!</p>
           <button type="button"  onclick="ShowBuyTicket()" class="btn btn-primary rounded-pill">Acquista biglietto</button>
         </div>
         <!-- FINE SINISTRA 1 -->
@@ -46,7 +51,8 @@
 
                 <div class="data">
                 <b>Scegli una data: </b>
-                <input class="ora" type="date" id="data_inizio" min="2021-01-01" max="2021-12-31"></label>
+                <% LocalDate today = LocalDate.now();%>
+                <input class="ora" type="date" id="data_inizio" min="<%=today%>" max="2021-12-31"></label>
                 <button class="btn btn-primary rounded-pill" onclick="selezionaTurno()">Controlla data</button>
                 </div>
 
@@ -122,6 +128,7 @@
   </div>
 
 </div>
+
 
 
 

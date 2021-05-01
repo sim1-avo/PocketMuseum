@@ -176,7 +176,7 @@ hr {
 
 
 .fg-primary {
-  color: var(--primary) !important;
+  color: darkgoldenrod !important;
 }
 
 .fg-secondary {
@@ -2317,12 +2317,10 @@ input.mb-4.fw-normal {
 .avatar {
   padding: 4px 16px 4px 4px;
   display: -ms-inline-flexbox;
-  display: inline-flex;
+  /*display: inline-flex;*/
   flex-direction: row;
   align-items: center;
-  background-color: #fff;
   width: auto;
-  border-radius: 50rem;
 }
 
 .avatar-img {
@@ -2451,10 +2449,12 @@ input.mb-4.fw-normal {
   padding: 50px 12px;
   opacity: 0.3;
   transition: all .3s ease;
+  margin-top:10px;
 }
 
 .stack-carousel .owl-item.center {
   transform: scale(1.2);
+
   opacity: 1;
   z-index: 3;
 }
@@ -2463,9 +2463,38 @@ input.mb-4.fw-normal {
   position: relative;
   padding: 20px;
   width: 100%;
+  border-radius:20px;
   background-color: #fff;
   box-shadow: 0 4px 12px rgba(56, 51, 64, 0.15);
 }
+
+@media only screen and (max-width: 600px) {
+ .itemopera {
+     background-color: white;
+     /* padding: 2px; */
+     text-align: -webkit-center;
+ }
+
+ .captionopera {
+     /* width: 30px; */
+ }
+ img.opera {
+     vertical-align: middle;
+     border-style: none;
+     max-width: -webkit-fill-available;
+ }
+.no-js .owl-carousel, .owl-carousel.owl-loaded {
+     display: none;
+}
+form#ricrec {
+    margin-top: 15px;
+}
+}
+@media only screen and (min-width: 601px) {
+#minwidth{
+display:none;}
+}
+
 
 
 .maps-container {
@@ -2871,4 +2900,35 @@ form#passForm {
   .comment-list .children {
     padding: 20px 0 0 40px;
   }
+}
+
+/*SPAN IN OPERETOUR.HTML*/
+
+button.owl-prev, button.owl-next{
+display:none;}
+
+/*TEXT AREA RECENSIONE*/
+
+#descRec{
+    width: -webkit-fill-available;
+        color: black;
+}
+
+button#btnRec {
+    padding: revert;
+}
+
+.caption .fullscreen {
+  width: 30px;
+  background-color: transparent;
+  border: none;
+  transform: translate(-11%, -115%);
+  filter: invert(1);
+}
+
+
+button.fullscreen {
+    width: 30px;
+    background-color: transparent;
+    border: none;
 }

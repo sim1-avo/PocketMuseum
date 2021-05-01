@@ -45,7 +45,7 @@ $(document).on(
 
 						$("#prova").fadeOut(3000);
 					} else {
-						window.location.href="./ListOpere.jsp";
+						window.location.href="./OpereTour.jsp";
 					}
 				});
 			})

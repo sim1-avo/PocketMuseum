@@ -169,6 +169,7 @@ function validate() {
 function selezionaTurno(){
 
 	  var date = new Date($('#data_inizio').val());
+	  console.log(date);
 	  var day = date.getDate();
 		var month = date.getMonth() + 1;
 		var year = date.getFullYear();

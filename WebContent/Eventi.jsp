@@ -15,10 +15,11 @@
    eventi= (ArrayList<EventoBean> ) model.doRetrieveAll("DESC");
 
 
-   if(session.getAttribute("biglietteria")==null && session.getAttribute("utente")==null && session.getAttribute("guida")==null){
-       response.sendRedirect("Log.jsp");
+   /*if(session.getAttribute("biglietteria")==null && session.getAttribute("utente")==null && session.getAttribute("guida")==null){
+       response.sendRedirect("Login.jsp");
        return;
-   }
+   }*/
+
    if(eventi.size()!=0){
    %>
     <div class="row justify-content-center mt-5 wow zoomIn">

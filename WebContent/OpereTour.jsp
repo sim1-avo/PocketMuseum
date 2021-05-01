@@ -6,12 +6,24 @@
 
 
 <%
-if( session.getAttribute("utente")==null && session.getAttribute("guida")==null){
-	response.sendRedirect("Log.jsp");
+if( session.getAttribute("utente")==null){
+	response.sendRedirect("Login.jsp");
 	return;
 }
+
+
+
 	OperaModelDM listaopere = new OperaModelDM();
-	ArrayList<OperaBean> opere = (ArrayList<OperaBean>) listaopere.doRetrieveAll("ASC");
+	ArrayList<OperaBean> opere = (ArrayList<OperaBean>) request.getAttribute("opere");
+
+    	if(opere == null){
+    		String s = request.getParameter("search");
+    		if(s == null){
+    			s="";
+    		}
+    		response.sendRedirect(response.encodeRedirectURL("./CercaOpera?search=" + s));
+    		return;
+    	}
 %>
 
 <!DOCTYPE html>
@@ -43,7 +55,7 @@ if( session.getAttribute("utente")==null && session.getAttribute("guida")==null)
   <link rel="stylesheet" href="assets/css/starSlider.css">
 </head>
 <body>
-<!-- Testimonials -->
+<!-- OperTour -->
 <nav class="navbar navbar-expand-lg navbar-light navbar-floating">
   <div class="container">
     <a class="navbar-brand" href="UtentePP.jsp">
@@ -55,24 +67,19 @@ if( session.getAttribute("utente")==null && session.getAttribute("guida")==null)
 
     <div class="collapse navbar-collapse" id="navbarToggler">
       <ul class="navbar-nav ml-lg-5 mt-3 mt-lg-0">
-      <!--
-
-        -->
-        <%
+                               <!--CAMBIARE CON != null-->
+       <%
         if(session.getAttribute("codiceValido") == null){%>
+        <li>
         <form action="CercaOpera"  style="height:10px; margin-bottom:20px">
             <input id="srcOpr" name="search" class="mb-4 fw-normal" type="search" placeholder="Search" aria-label="Search">
             <button class="searchbtn" type="submit">
                     <img src="https://www.freepnglogos.com/uploads/search-png/search-icon-clip-art-clkerm-vector-clip-art-online-8.png" width="20px"/>
-                    </button>
-            <%if(session.getAttribute("codiceValido") != null){%>
-                <button class="btn btn-primary rounded-pill"
-                    style="min-width:150px;margin-left: 5px;align-self: center;"
-                        onclick="CercaOpera?search=">Lista opere</button>
-            <%} %>
+            </button>
         </form>
-
-        <form action="RicercaRecensione" method="post" style="text-align: center">
+      </li>
+      <li>
+        <form id="ricrec" action="RicercaRecensione" method="post">
             <div class="selectStar">
                 <select name="stelle" required class="ora" id="exampleFormControlSelect1">
                     <option> Select number of star</option>
@@ -87,58 +94,103 @@ if( session.getAttribute("utente")==null && session.getAttribute("guida")==null)
                 <img src="https://www.freepnglogos.com/uploads/search-png/search-icon-clip-art-clkerm-vector-clip-art-online-8.png" width="20px"/>
             </button>
         </form>
+        </li>
 
 
     <%} %>
 
-
-
-
-
       </ul>
-
 		<div class="ml-auto my-2 my-lg-0">
-        <button class="btn btn-dark rounded-pill"> <a href="UtentePP.jsp">Esci dal tour</a></button>
-      </div>
-
-
+           <a href="UtentePP.jsp"> <button class="btn btn-dark rounded-pill"> Esci dal tour </button> </a>
+        </div>
     </div>
   </div>
 </nav>
+
+<!-- ELENCO OPERE -->
+
 <div class="page-section bg-dark fg-white" style="background-image: url(assets/img/pattern_1.svg);">
   <div class="container-fluid">
-    <div class="owl-carousel stack-carousel mt-5 wow fadeInUp">
+
+  <!--MIN WIDTH -->
+    <div id="minwidth">
+    <%if(opere.size() != 0){
+    		  	for(OperaBean opera: opere){
+    		   	  if(opera.getStato().equals("visibile")){
+    		%>
+              <div class="itemopera">
+                <div class="avatar mt-3">
+
+                              <div class="avatar-caption">
+                                <p class="mb-0 fw-medium fg-primary" style="color:darkgoldenrod"><%=opera.getNome() %></p>
+                                <div class="fs-vsmall fw-medium" style="color:black"><%=opera.getAutore() %></div>
+                              </div>
+                </div>
+                <div class="captionopera">
+                <img class="opera"  src="data:image/png;base64,<%=opera.getCopertina()%>" alt="NON VA">
+                </div>
+
+                <div class="avatar mt-3">
+                    <div class="avatar-caption" style="overflow-y: scroll; height: 138px;">
+                    <div class="fs-vsmall fw-medium" style="color:black"><%=opera.getDescrizione() %></div>
+                </div>
+                <div class="ratings fs-small py-3">
+                              <span class="icon mai-star"></span>
+                              <span class="icon mai-star"></span>
+                              <span class="icon mai-star"></span>
+                              <span class="icon mai-star"></span>
+                              <span class="mai-star"></span>
+                <textarea id="descRec"  name="recensione" placeholder="Inserisci una recensione" rows="4" cols="50"></textarea>
+                <center>
+                    <button id="btnRec" class="btn btn-primary rounded-pill">Invia Recensione</button>
+                </center>
+                </div>
+              </div>
+          </div>
+          <%}else{ %>
+          <div></div>
+          <%}
+          }} %>
+
+
+    </div>
+
+
+
+  <!--MAX WIDTH -->
+    <div id="maxwidth" class="owl-carousel stack-carousel mt-5 wow fadeInUp">
         <%if(opere.size() != 0){
 		  	for(OperaBean opera: opere){
-		   	  if(request.getSession().getAttribute("guida")!=null
-		   	    || request.getSession().getAttribute("biglietteria")!=null
-		  	    || opera.getStato().equals("visibile")  ){
+		   	  if(opera.getStato().equals("visibile")){
 		%>
           <div class="item">
-            <div class="ratings fs-small py-3">
-              <span class="icon mai-star"></span>
-              <span class="icon mai-star"></span>
-              <span class="icon mai-star"></span>
-              <span class="icon mai-star"></span>
-              <span class="mai-star"></span>
-            </div>
+
 
             <div class="avatar mt-3">
-                          <div class="avatar-img">
-                            <img src="assets/img/artist.svg" alt="">
-                          </div>
+
                           <div class="avatar-caption">
-                            <p class="mb-0 fw-medium fg-primary"><%=opera.getNome() %></p>
-                            <div class="fs-vsmall fw-medium"><%=opera.getAutore() %></div>
+                            <p class="mb-0 fw-medium fg-primary" style="color:darkgoldenrod"><%=opera.getNome() %></p>
+                            <div class="fs-vsmall fw-medium" style="color:black"><%=opera.getAutore() %></div>
                           </div>
             </div>
             <div class="caption">
-            <img src="data:image/png;base64,<%=opera.getCopertina()%>" alt="NON VA">
+            <img  src="data:image/png;base64,<%=opera.getCopertina()%>" alt="NON VA">
             </div>
 
             <div class="avatar mt-3">
                 <div class="avatar-caption" style="overflow-y: scroll; height: 138px;">
                 <div class="fs-vsmall fw-medium" style="color:black"><%=opera.getDescrizione() %></div>
+            </div>
+            <div class="ratings fs-small py-3">
+                          <span class="icon mai-star"></span>
+                          <span class="icon mai-star"></span>
+                          <span class="icon mai-star"></span>
+                          <span class="icon mai-star"></span>
+                          <span class="mai-star"></span>
+            <textarea id="descRec"  name="recensione" placeholder="Inserisci una recensione" rows="4" cols="50"></textarea>
+            <center>
+                <button id="btnRec" class="btn btn-primary rounded-pill">Invia Recensione</button>
+            </center>
             </div>
           </div>
       </div>
@@ -154,7 +206,6 @@ if( session.getAttribute("utente")==null && session.getAttribute("guida")==null)
 
 
 
-
 <script src="assets/js/jquery-3.5.1.min.js"></script>
 
 <script src="assets/js/bootstrap.bundle.min.js"></script>
@@ -164,7 +215,9 @@ if( session.getAttribute("utente")==null && session.getAttribute("guida")==null)
 <script src="assets/vendor/wow/wow.min.js"></script>
 
 <script src="assets/js/mobster.js"></script>
+
 <script src="assets/js/sendStar.js"></script>
+<script src="assets/js/operetour.js"></script>
 
 
 </body>

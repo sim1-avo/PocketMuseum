@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +5,6 @@
 	<title>PocketMuseum</title>
 </head>
 	<body>
-
 
 
 <div class="position-realive bg-image" style="background-image: url(assets/img/pattern_1.svg);">
@@ -21,21 +19,30 @@
                             <div class="flip-box-inner">
 
                               <div class="flip-box-front">
-                              <% String nome =utente.getNome();
+                              <%
+                              if (session.getAttribute("utente")!=null){
+                                 String nome =utente.getNome();
                               	 char n=nome.charAt(0);
                               	 String cognome =utente.getCognome();
                               	 char c=cognome.charAt(0);
+                              	 }
                               %>
                                   <div class="marginborder">
 
                                     <div class="circleUser">
-                                        <%=n%><%=c%>
+                                        B
                                     </div>
 
                                     <div class= "userData">
+                                    <% if (session.getAttribute("utente")!=null){ %>
                                     <h1 style = "color:white"> <%=utente.getNome()%> <%=utente.getCognome()%> </h1>
+                                    <%}else{%>
+                                        <h1 style = "color:white"> Biglietteria </h1>
+                                    <%}%>
                                     <p>E-mail: <%=utente.getEmail()%></p>
+                                    <% if (session.getAttribute("utente")!=null){ %>
                                     <p>CF: <%=utente.getCf()%></p>
+                                    <%}%>
                                     </div>
                                    </div>
                               </div>
@@ -78,7 +85,7 @@
 
       </form>
     </div>
-      <div id="UserImg" class="col-lg-5 py-3">
+      <div id="UserImg" class="col-lg-5 py-3 shadow floating-animate">
          <div class="img-place mobile-preview shadow wow zoomIn">
               <img src="assets/img/Placeholder-bro.svg" alt="">
          </div>

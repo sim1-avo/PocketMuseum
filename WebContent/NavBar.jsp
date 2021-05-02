@@ -86,8 +86,9 @@ if(request.getSession(false).getAttribute("utente")!=null) {
 			          <%}else{ %><a class="dropdown-item" href="<%=response.encodeRedirectURL("./LogoutServlet")%>">Logout</a><%} %>
 		        	</div>
 		      	</li>
-		    
-		        <%} %>
+				<li class="nav-item"><a class="nav-link js-scroll-trigger" href="<%=response.encodeRedirectURL("./MostraEventiServlet")%>">Eventi</a></li>
+
+				<%} %>
 		        
 		        
 		        

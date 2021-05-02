@@ -1,3 +1,5 @@
+<%@ page  import=" model.evento.EventoBean, java.util.ArrayList ,java.sql.Date,java.sql.Timestamp"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,15 +12,6 @@
 <div class="page-section">
   <div class="container">
    <%
-   ArrayList<EventoBean> eventi = new ArrayList();
-   EventoModelDM model = new EventoModelDM();
-   eventi= (ArrayList<EventoBean> ) model.doRetrieveAll("DESC");
-
-
-   /*if(session.getAttribute("biglietteria")==null && session.getAttribute("utente")==null && session.getAttribute("guida")==null){
-       response.sendRedirect("Login.jsp");
-       return;
-   }*/
 
    if(eventi.size()!=0){
    %>
@@ -29,10 +22,10 @@
            Timestamp ts=evento.getDataInizio();
            Date dataInizio=new Date(ts.getTime());
            Timestamp ts2=evento.getDataFine();
-           Date dataFine=new Date(ts.getTime());
+           Date dataFine=new Date(ts2.getTime());
         %>
         <div class="card floating-animate">
-          <img class="imgEvento" src="data:image/png;base64,<%=evento.getImmagine()%>"  width: 100px;border-radius: 20px;" alt="">
+          <img class="imgEvento" src="data:image/png;base64,<%=evento.getImmagine()%>"  alt="">
           <b style="color:darkgoldenrod"><%=evento.getNome()%></b>
           <p class="title">Inizio: <%=dataInizio%> <br> Fine: <%=dataFine%></p>
           <p style="color:white; background-color: darkgoldenrod">PocketMuseum</p>

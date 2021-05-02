@@ -3,6 +3,7 @@
 <%@page import="java.util.ArrayList, model.biglietto.*, model.utente.*, model.evento.*,java.sql.Date,java.sql.Timestamp" %>
 
 <%
+
 	UtenteBean utente= new UtenteBean();
 	if(request.getSession(false).getAttribute("utente")==null) {
 		response.sendRedirect("Login.jsp");
@@ -10,6 +11,12 @@
 	}
 	utente=(UtenteBean) request.getSession().getAttribute("utente");
 
+    ArrayList<EventoBean> eventi = (ArrayList<EventoBean> ) request.getAttribute("eventi");
+
+    if(eventi == null) {
+        response.sendRedirect(response.encodeRedirectURL("./MostraEventiServlet"));
+        return;
+    }
 
 %>
 <!DOCTYPE html>
@@ -106,7 +113,7 @@
 <div id="history"><%@include file="History.jsp"%></div>
 
 <!-- EVENTi -->
-<div id="events"><%@include file="Eventi.jsp"%></div>
+<div id="events"><%@include file="WEB-INF/Eventi.jsp"%></div>
 
 
 

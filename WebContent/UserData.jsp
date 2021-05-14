@@ -19,27 +19,33 @@
                             <div class="flip-box-inner">
 
                               <div class="flip-box-front">
-                              <%
-                              if (session.getAttribute("utente")!=null){
-                                 String nome =utente.getNome();
-                              	 char n=nome.charAt(0);
-                              	 String cognome =utente.getCognome();
-                              	 char c=cognome.charAt(0);
-                              	 }
-                              %>
+
                                   <div class="marginborder">
 
                                     <div class="circleUser">
+                                    <% if (session.getAttribute("utente")!=null){ %>
+                                        <%=utente.getNome().charAt(0)%> <%=utente.getCognome().charAt(0)%>
+                                    <%} if (session.getAttribute("guida")!=null){ %>
+                                        G
+                                    <%}if (session.getAttribute("biglietteria")!=null){ %>
                                         B
+                                    <%}%>
+
                                     </div>
 
                                     <div class= "userData">
                                     <% if (session.getAttribute("utente")!=null){ %>
                                     <h1 style = "color:white"> <%=utente.getNome()%> <%=utente.getCognome()%> </h1>
-                                    <%}else{%>
+                                    <%} if (session.getAttribute("guida")!=null){ %>
+                                        <h1 style = "color:white"> Guida </h1>
+                                    <%}if (session.getAttribute("biglietteria")!=null){ %>
                                         <h1 style = "color:white"> Biglietteria </h1>
                                     <%}%>
-                                    <p>E-mail: <%=utente.getEmail()%></p>
+                                    <%if (session.getAttribute("guida")!=null){ %>
+                                        <p>E-mail: guida@pocketmuseum.it</p>
+                                    <%} else{ %>
+                                        <p>E-mail: <%=utente.getEmail()%></p>
+                                    <%}%>
                                     <% if (session.getAttribute("utente")!=null){ %>
                                     <p>CF: <%=utente.getCf()%></p>
                                     <%}%>

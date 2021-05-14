@@ -30,7 +30,7 @@
 <%
 if(session.getAttribute("guida")!=null){ 
 
-response.sendRedirect(response.encodeRedirectURL("GuidaPersonalPage.jsp"));
+response.sendRedirect(response.encodeRedirectURL("GuidaPP.jsp"));
 return;
 }
 
@@ -63,15 +63,6 @@ return;
   
     <div class="collapse navbar-collapse" id="navbarToggler">
       <ul class="navbar-nav ml-lg-5 mt-3 mt-lg-0">
-      <!--  
-        <li class="nav-item dropdown active">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item active" href="index.html">Homepage 1</a>
-            <a class="dropdown-item" href="index-2.html">Homepage 2</a>
-          </div>
-        </li>
-        -->
         <li class="nav-item">
           <a class="nav-link" href="#">Events</a>
         </li>

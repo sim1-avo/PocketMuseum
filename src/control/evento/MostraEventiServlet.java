@@ -44,7 +44,7 @@ public class MostraEventiServlet extends HttpServlet {
 
         if (guida != null && secure != null) {
             request.getSession(true).setAttribute("eventi", eventi);
-            RequestDispatcher rd = request.getRequestDispatcher("/GuidaPersonalPage.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("/GuidaPP.jsp");
             rd.forward(request, response);
         } else {
             request.setAttribute("eventi", eventi);

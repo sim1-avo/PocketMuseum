@@ -43,7 +43,7 @@ public class LoginServlet extends HttpServlet {
       if (password.equals(utente.getPassword())) {
         if  (email.equals("guida@pocketmuseum.it")) {
           request.getSession(true).setAttribute("guida", utente);
-          redirect = "GuidaPersonalPage.jsp";
+          redirect = "GuidaPP.jsp";
         } else if (email.equals("biglietteria@pocketmuseum.it")) {
           request.getSession(true).setAttribute("biglietteria", utente);
           redirect = "BiglietteriaPP.jsp";

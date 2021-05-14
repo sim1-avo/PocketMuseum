@@ -29,10 +29,13 @@
           <b style="color:darkgoldenrod"><%=evento.getNome()%></b>
           <p class="title">Inizio: <%=dataInizio%> <br> Fine: <%=dataFine%></p>
           <p style="color:white; background-color: darkgoldenrod">PocketMuseum</p>
-
+          <%if(request.getSession(false).getAttribute("guida")!=null) {%>
+            <div id="cr" style="margin-bottom: 9px">
+            <a class="changeRemove" href="ModificaEventoPage?idEvent=<%= evento.getId() %>">Modifica</a>
+            <a class="changeRemove" href="EliminaEvento?idEvent=<%= evento.getId() %>">Elimina</a>
+            </div>
+          <%}%>
         </div>
-
-
 
         <%}}else{%>
             <tr><td><h3 style="text-align: center">Nessun evento in programma</h3></td></tr>

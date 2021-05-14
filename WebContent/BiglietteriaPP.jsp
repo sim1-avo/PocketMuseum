@@ -34,6 +34,16 @@
 
 </head>
 
+<%
+    ArrayList<EventoBean> eventi = (ArrayList<EventoBean> ) request.getAttribute("eventi");
+
+    if(eventi == null) {
+        response.sendRedirect(response.encodeRedirectURL("./MostraEventiServlet"));
+        return;
+    }
+
+%>
+
 
 <body>
 
@@ -51,7 +61,7 @@
 <div id="history"><%@include file="History.jsp"%></div>
 
 <!-- EVENTi -->
-<div id="events"><%@include file="Eventi.jsp"%></div>
+<div id="events"><%@include file="WEB-INF/Eventi.jsp"%></div>
 
 
 

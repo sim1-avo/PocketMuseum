@@ -4,6 +4,8 @@ $(document).ready(function(){
   $("#userdata").hide();
   $("#history").hide();
   $("#events").hide();
+  /*Solo per la guida*/
+  $("#opere").show();
   /*Page Tour*/
   $("#end-right-tour").hide();
   $("#end-left-tour").hide();
@@ -15,6 +17,11 @@ $(document).ready(function(){
   /*Pagine History*/
   $("#chartContainer").hide();
   $("#infotkt").hide();
+
+  /*Lato Guida*/
+  /*Page Opere*/
+
+
 });
 function ShowTour(){
         $("#history").hide();
@@ -27,6 +34,8 @@ function ShowUserData(){
         $("#history").hide();
         $("#tour").hide();
         $("#events").hide();
+        /*Solo guida*/
+        $("#opere").hide();
         $("#userdata").show();
 }
 function ShowHistory(){
@@ -39,7 +48,15 @@ function ShowEvents(){
         $("#userdata").hide();
         $("#tour").hide();
         $("#history").hide();
+        /*Solo guida*/
+        $("#opere").hide();
         $("#events").show();
+}
+/*Solo guida*/
+function ShowOpere(){
+        $("#userdata").hide();
+        $("#events").hide();
+        $("#opere").show();
 }
 
 /*Page Tour*/

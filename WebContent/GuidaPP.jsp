@@ -1,16 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@page import="java.util.ArrayList, model.biglietto.*, model.utente.*, model.evento.*,java.sql.Date,java.sql.Timestamp" %>
-
-<%
-    ArrayList<EventoBean> eventi = (ArrayList<EventoBean> ) request.getAttribute("eventi");
-
-    if(eventi == null) {
-        response.sendRedirect(response.encodeRedirectURL("./MostraEventiServlet"));
-        return;
-    }
-
-%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,36 +30,41 @@
 
   <link rel="stylesheet" href="assets/css/cardEvents.css">
 
+  <link rel="stylesheet" href="assets/css/historyBiglietteria.css">
+
+  <link rel="stylesheet" href="assets/css/AddChangeRemoveOpere.css">
+
 </head>
+<%
+    ArrayList<EventoBean> eventi = (ArrayList<EventoBean> ) request.getAttribute("eventi");
 
+    if(eventi == null) {
+        response.sendRedirect(response.encodeRedirectURL("./GuidaPageServlet"));
+        return;
+    }
 
+%>
 <body>
 
 
 <%@include file="NavigationBar.jsp"%>
-<!-- TOUR -->
-<div id="tour"><%@include file="Tour.jsp"%></div>
+
+
+<!-- OPERE -->
+<div id="opere"><%@include file="Opere.jsp"%></div>
+
+<!-- EVENTI -->
+<div id="events"><%@include file="WEB-INF/Eventi.jsp"%></div>
 
 <!-- USER DATA - MENU -->
 <div id="userdata"><%@include file="UserData.jsp"%></div>
 
-<!-- HISTORY -->
-<div id="history"><%@include file="History.jsp"%></div>
-
-<!-- EVENTi -->
-<div id="events"><%@include file="WEB-INF/Eventi.jsp"%></div>
-
-
-
-
-<script>
-
-</script>
-<script src="assets/js/utentepp.js"></script>
 
 <script src="assets/js/jquery-3.5.1.min.js"></script>
 
 <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+<script src="assets/js/utentepp.js"></script>
 
 <script src="assets/vendor/owl-carousel/js/owl.carousel.min.js"></script>
 

@@ -2932,3 +2932,12 @@ button.fullscreen {
     background-color: transparent;
     border: none;
 }
+
+
+a.changeRemove {
+    background-color: #b8860bad;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+

@@ -17,9 +17,29 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link href="css/ModificaEvento.css" rel="stylesheet" type="text/css">
-    <link href="css/styles.css" rel="stylesheet" type="text/css">
-    <link rel="icon" type="image/x-icon" href="img/C09_Logo.png" />
+    <link rel="stylesheet" href="assets/css/maicons.css">
+
+      <link rel="stylesheet" href="assets/vendor/animate/animate.css">
+
+      <link rel="stylesheet" href="assets/vendor/owl-carousel/css/owl.carousel.min.css">
+
+      <link rel="stylesheet" href="assets/css/bootstrap.css">
+
+      <link rel="stylesheet" href="assets/css/mobster.css">
+
+      <link rel="stylesheet" href="assets/css/flipbox.css">
+
+      <link rel="stylesheet" href="assets/css/ticket.css">
+
+      <link rel="stylesheet" href="assets/css/cardEvents.css">
+
+      <link rel="stylesheet" href="assets/css/historyBiglietteria.css">
+
+      <link rel="stylesheet" href="assets/css/AddChangeRemoveOpere.css">
+
+      <link rel="stylesheet" href="css/ModificaEvento.css">
+
+     <link rel="icon" type="image/x-icon" href="img/C09_Logo.png" />
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Font Awesome icons (free version)-->
@@ -46,72 +66,86 @@
 </head>
 
 <body>
-<jsp:include page="NavBar.jsp"></jsp:include>
+<%if(session.getAttribute("guida") != null){ %>
 
-<div class="container"  style="opacity:0.85!important">
-    <div class="text-center">
-        <h2 class="section-heading text-uppercase" style="text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;color:white">Modifica Evento <%= evento.getNome()%></h2>
+<nav class="navbar navbar-expand-lg navbar-light navbar-floating">
+  <div class="container">
+    <a class="navbar-brand" href="GuidaPP.jsp">
+      <img src="assets/logo.png" alt="" width="40">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
+    <div class="collapse navbar-collapse" id="navbarToggler">
+         <div class="ml-auto my-2 my-lg-0">
+                <a href="GuidaPP.jsp" ><button class="btn btn-primary rounded-pill" h> Indietro </button></a>
+         </div>
     </div>
-    <form  style="background-color:#212529; padding:5%" enctype="multipart/form-data" id="editEvent" name="sentMessage" method="post" action="ModificaEvento" onsubmit="return validate()">
-        <div class="row align-items-stretch mb-5" >
-            <div class="col-md-6">
-                <div class="form-group">
-                    <input class="form-control" name="Nome" id="name" type="text" placeholder="Nome*" pattern="([\w\W]{10,100})"
-                           title="Il campo nome non rispetta il formato o la lunghezza" required="required" data-validation-required-message="Inserisci nome evento."
-                           value="<%= evento.getNome()%>" >
-                    <p class="help-block text-danger"></p>
-                </div>
-                <div class="form-group">
-                    <input class="form-control" name="data_inizio" id="datain"
-                           type="date" placeholder="Data Inizio*" required="required"
-                           data-validation-required-message="Inserisci data inizio dell'evento."
-                           value="<%=evento.getCompatibleDataInizioInput()%>">
-                    <p class="help-block text-danger"></p>
-                </div>
-                <div class="form-group mb-md-0">
-                    <input class="form-control" type="date" name="data_fine"
-                           id="datafin" placeholder="Data Fine" required="required"
-                           data-validation-required-message="Inserisci data fine dell'evento."
-                           value="<%=evento.getCompatibleDataFineInput()%>">
-                    <p class="help-block text-danger"></p>
-                    <p id="date-error" class="help-block text-danger error-field"></p>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group form-group-textarea mb-md-0">
-                    <textarea style="color:black;" class="form-control" id="descrizione"
-                              name="Descrizione" placeholder="Descrizione evento*"
-                              required="required" data-validation-required-message="Inserisci descrizione dell'evento."><%= evento.getDescrizione()%>
-                    </textarea>
-                    <p id="textarea-error" class="help-block text-danger error-field"></p>
-                </div>
+  </div>
+</nav>
+<%}%>
+<div class="position-realive bg-image" style="background-image: url(assets/img/pattern_1.svg);">
+  <div class="page-section">
+    <div class="container">
+      <div class="row">
+      <!-- SINISTRA -->
+          <div id="start-left-tour" class="col-lg-6 wow fadeInUp">
+           <br>
+           <center><h4 style="color:darkgoldenrod"> Modifica Evento: <br> <b> <%= evento.getNome()%></b></h4></center>
+           <form enctype="multipart/form-data" id="editEvent" name="sentMessage" method="post" action="ModificaEvento" onsubmit="return validate()" style="text-align-last: center;">
+                      <input class="mb-4 fw-normal" style="width: -webkit-fill-available;" name="Nome" id="name" type="text" placeholder="Nome*" pattern="([\w\W]{10,100})"
+                             title="Il campo nome non rispetta il formato o la lunghezza" required="required" data-validation-required-message="Inserisci nome evento."
+                             value="<%= evento.getNome()%>" >
+                      <p class="help-block text-danger"></p>
+                      <div id="date" style="display: flex;">
+                          <input class="mb-4 fw-normal" style="width: -webkit-fill-available;" name="data_inizio" id="datain"
+                                 type="date" placeholder="Data Inizio*" required="required"
+                                 data-validation-required-message="Inserisci data inizio dell'evento."
+                                 value="<%=evento.getCompatibleDataInizioInput()%>">
+                          <p class="help-block text-danger"></p>
 
-                <div class="form-group changeImage-container">
-                    <h4>Cambia Immagine (opzionale)</h4>
-                    <input style="color:white" name="Immagine" type="file"
-                           class="form-control-file" id="loadFile">
-                    <p id="image-error" class="help-block text-danger error-field"></p>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="text-center">
-                    <div id="success"></div>
-                    <button class="btn btn-primary btn-xl text-uppercase" id="sendMessageButton" type="submit">Modifica Evento</button>
-                </div>
-            </div>
+                          <input class="mb-4 fw-normal" style="width: -webkit-fill-available;" type="date" name="data_fine"
+                                 id="datafin" placeholder="Data Fine" required="required"
+                                 data-validation-required-message="Inserisci data fine dell'evento."
+                                 value="<%=evento.getCompatibleDataFineInput()%>">
+                          <p class="help-block text-danger"></p>
+                          <p id="date-error" class="help-block text-danger error-field"></p>
+                      </div>
+                          <textarea rows="2" style="width: -webkit-fill-available;"
+                                    class="mb-4 fw-normal" id="descrizione"
+                                    name="Descrizione" placeholder="Descrizione evento*"
+                                    required="required" data-validation-required-message="Inserisci descrizione dell'evento."><%= evento.getDescrizione()%>
+                          </textarea>
+                          <p id="textarea-error" class="help-block text-danger error-field"></p>
 
-        </div>
-        <input type="hidden" name="idEvent" id="idEvent" value="<%= evento.getId() %>">
-    </form>
+                          <b>Cambia Immagine (opzionale)</b>
+                          <input name="Immagine" type="file"
+                                 class="form-control-file" id="loadFile">
+                          <p id="image-error" class="help-block text-danger error-field"></p>
+
+                          <div id="success"></div>
+                          <button class="btn btn-primary rounded-pill" id="sendMessageButton" type="submit">Modifica Evento</button>
+
+                  <input type="hidden" name="idEvent" id="idEvent" value="<%= evento.getId() %>">
+              </form>
+          </div>
+
+          <!-- FINE SINISTRA  -->
+
+          <!-- DESTRA -->
+              <div class="col-lg-6 d-none d-lg-block">
+                <div class="img-place mobile-preview shadow floating-animate">
+                  <img class="wow zoomIn" src="assets/img/dinosaur.svg" alt="">
+
+                </div>
+              </div>
+          <!-- FINE DESTRA -->
+
+      </div>
+    </div>
+  </div>
 </div>
-
-<footer style="margin-top:600px" >
-
-    <jsp:include page="Footer.jsp"></jsp:include>
-
-
-</footer>
 
 
 </body>

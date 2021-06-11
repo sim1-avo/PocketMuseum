@@ -1,16 +1,21 @@
 <%@page import="model.opera.*"%>
 <%@page import="java.util.ArrayList"%>
+<%@page import="model.utente.*"%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
 
 <%
+	Integer media = (Integer) request.getAttribute("media");
+    UtenteBean utente = null;
+
 if( session.getAttribute("utente")==null){
+
 	response.sendRedirect("Login.jsp");
 	return;
 }
-
+utente = (UtenteBean) session.getAttribute("utente");
 
 
 	OperaModelDM listaopere = new OperaModelDM();
@@ -53,6 +58,9 @@ if( session.getAttribute("utente")==null){
   <link rel="stylesheet" href="assets/css/mobster.css">
 
   <link rel="stylesheet" href="assets/css/starSlider.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 <body>
 <!-- OperTour -->
@@ -134,17 +142,20 @@ if( session.getAttribute("utente")==null){
                     <div class="avatar-caption" style="overflow-y: scroll; height: 138px;">
                     <div class="fs-vsmall fw-medium" style="color:black"><%=opera.getDescrizione() %></div>
                 </div>
-                <div class="ratings fs-small py-3">
-                              <span class="icon mai-star"></span>
-                              <span class="icon mai-star"></span>
-                              <span class="icon mai-star"></span>
-                              <span class="icon mai-star"></span>
-                              <span class="mai-star"></span>
-                <textarea id="descRec"  name="recensione" placeholder="Inserisci una recensione" rows="4" cols="50"></textarea>
-                <center>
-                    <button id="btnRec" class="btn btn-primary rounded-pill">Invia Recensione</button>
-                </center>
-                </div>
+
+                <form id="recensioneForm" action="AggiungiRecensione" method="get">
+
+                    <input type="hidden" name="operaId" value="<%=opera.getId()%>">
+                    <%if(utente!=null){ %>
+                    <input type="hidden" name="email" value="<%=utente.getEmail()%>">
+                    <%} %>
+                    <br>
+                    <textarea id="comment" name="commento" placeholder="Inserisci una recensione" rows="4" style="width: -webkit-fill-available;"></textarea>
+
+                    <center><i class="fa fa-thumbs-down"></i> <input type="range" name=stelle min="1" max="5"> <i class="fa fa-thumbs-up"></i></center>
+                    <br>
+                    <center><input class="btn btn-primary rounded-pill" style="padding: revert;" type="submit" value="Invia recensione"></center>
+                </form>
               </div>
           </div>
           <%}else{ %>
@@ -162,36 +173,41 @@ if( session.getAttribute("utente")==null){
         <%if(opere.size() != 0){
 		  	for(OperaBean opera: opere){
 		   	  if(opera.getStato().equals("visibile")){
+		   	  int idOp= opera.getId();
 		%>
           <div class="item">
-
-
             <div class="avatar mt-3">
-
-                          <div class="avatar-caption">
-                            <p class="mb-0 fw-medium fg-primary" style="color:darkgoldenrod"><%=opera.getNome() %></p>
-                            <div class="fs-vsmall fw-medium" style="color:black"><%=opera.getAutore() %></div>
-                          </div>
+              <div class="avatar-caption">
+                <p class="mb-0 fw-medium fg-primary" style="color:darkgoldenrod"> <%=opera.getNome() %></p>
+                <div class="fs-vsmall fw-medium" style="color:black"><%=opera.getAutore() %></div>
+              </div>
             </div>
+
             <div class="caption">
-            <img  src="data:image/png;base64,<%=opera.getCopertina()%>" alt="NON VA">
+                <img  src="data:image/png;base64,<%=opera.getCopertina()%>" alt="NON VA">
             </div>
 
             <div class="avatar mt-3">
                 <div class="avatar-caption" style="overflow-y: scroll; height: 138px;">
                 <div class="fs-vsmall fw-medium" style="color:black"><%=opera.getDescrizione() %></div>
             </div>
-            <div class="ratings fs-small py-3">
-                          <span class="icon mai-star"></span>
-                          <span class="icon mai-star"></span>
-                          <span class="icon mai-star"></span>
-                          <span class="icon mai-star"></span>
-                          <span class="mai-star"></span>
-            <textarea id="descRec"  name="recensione" placeholder="Inserisci una recensione" rows="4" cols="50"></textarea>
-            <center>
-                <button id="btnRec" class="btn btn-primary rounded-pill">Invia Recensione</button>
-            </center>
-            </div>
+
+
+
+            <form id="recensioneForm" action="AggiungiRecensione" method="get">
+
+            <input type="hidden" name="operaId" value="<%=opera.getId()%>">
+            <%if(utente!=null){ %>
+            <input type="hidden" name="email" value="<%=utente.getEmail()%>">
+            <%} %>
+            <br>
+            <textarea id="comment" name="commento" placeholder="Inserisci una recensione" rows="4" style="width: -webkit-fill-available;"></textarea>
+
+            <center><i class="fa fa-thumbs-down"></i> <input type="range" name=stelle min="1" max="5"> <i class="fa fa-thumbs-up"></i></center>
+            <br>
+            <center><input class="btn btn-primary rounded-pill" style="padding: revert;" type="submit" value="Invia recensione"></center>
+            </form>
+
           </div>
       </div>
       <%}else{ %>
@@ -201,9 +217,6 @@ if( session.getAttribute("utente")==null){
     </div>
   </div>
 </div>
-
-
-
 
 
 <script src="assets/js/jquery-3.5.1.min.js"></script>

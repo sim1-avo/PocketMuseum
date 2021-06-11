@@ -29,7 +29,7 @@
                 <h4 style="color: red; display: none" id="prova"> Codice
                             non valido</h4><br><br>
                 <%} else {%>
-                    <button type="button" style="color:black;width:90%"  onclick="window.location.href='CercaOpera?search='" class="btn btn-primary mb-2">Continua la tua visita!</button>
+                    <button type="button" style="color:white;width:90%"  onclick="window.location.href='CercaOpera?search='" class="btn btn-primary rounded-pill">Continua la tua visita!</button>
                 <%}%>
                 <p class="mb-4">Come? Non hai ancora un biglietto? <br> Non sai cosa ti perdi, <b style="color:#ba8600">acquistalo</b> ora!</p>
 

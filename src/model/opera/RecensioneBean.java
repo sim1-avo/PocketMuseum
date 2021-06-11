@@ -10,6 +10,7 @@ public class RecensioneBean implements Serializable {
   private int valutazione;
   private String email;
   private int idOpera;
+  private String commento;
   
   public RecensioneBean() {}
   
@@ -21,12 +22,13 @@ public class RecensioneBean implements Serializable {
    */
   
   
-  public RecensioneBean(int valutazione, String email, int idopera) {
+  public RecensioneBean(int valutazione, String email, int idopera, String commento) {
   
     super();
     this.valutazione = valutazione;
     this.email = email;
     this.idOpera = idopera;
+    this.commento=commento;
   }
 
   public int getValutazione() {
@@ -56,5 +58,13 @@ public class RecensioneBean implements Serializable {
 
   public void setIDopera(int idopera) {
     idOpera = idopera;
+  }
+
+  public String getCommento() {
+    return commento;
+  }
+
+  public void setCommento(String commento) {
+    this.commento = commento;
   }
 }

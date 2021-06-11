@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
 import model.DriverManagerConnectionPool;
+import model.utente.UtenteBean;
 
 
 public class RecensioneModelDM implements RecensioneModel<RecensioneBean> {
@@ -14,7 +15,7 @@ public class RecensioneModelDM implements RecensioneModel<RecensioneBean> {
   public void doSave(RecensioneBean recensione) throws SQLException {
     Connection connection = null;
     PreparedStatement ps = null;
-    String insertSql = "INSERT into Recensioni(Valutazione,email,IDopera) values (?,?,?)";
+    String insertSql = "INSERT into Recensioni(Valutazione,email,IDopera, commento) values (?,?,?,?)";
     try {
       connection = DriverManagerConnectionPool.getConnection();
       if (recensione instanceof RecensioneBean) {
@@ -22,6 +23,7 @@ public class RecensioneModelDM implements RecensioneModel<RecensioneBean> {
         ps.setInt(1, recensione.getValutazione());
         ps.setString(2, recensione.getEmail());
         ps.setInt(3, recensione.getIDopera());
+        ps.setString(4, recensione.getCommento());
         ps.executeUpdate();
         System.out.println("doSave:" + ps.toString());
         connection.commit();
@@ -55,6 +57,7 @@ public class RecensioneModelDM implements RecensioneModel<RecensioneBean> {
         bean.setValutazione(rs.getInt("Valutazione"));
         bean.setEmail(rs.getString("email"));
         bean.setIDopera(rs.getInt("IDopera"));
+        bean.setCommento(rs.getString("commento"));
       }
     } finally {
       try {
@@ -111,6 +114,7 @@ public class RecensioneModelDM implements RecensioneModel<RecensioneBean> {
           bean.setValutazione(rs.getInt("Valutazione"));
           bean.setEmail(rs.getString("email"));
           bean.setIDopera(rs.getInt("IDopera"));
+          bean.setCommento(rs.getString("commento"));
           recensioni.add(bean);
         }
       }
@@ -158,5 +162,32 @@ public class RecensioneModelDM implements RecensioneModel<RecensioneBean> {
       return 0;
     }
     return totRec / numRec;
+  }
+
+  public void doUpdate(RecensioneBean recensione) throws SQLException {
+    Connection connection = null;
+    PreparedStatement ps = null;
+    String updateSql = "UPDATE Recensioni SET commento = ?, Valutazione = ? WHERE email = ? AND IDopera = ?";
+    try {
+      connection = DriverManagerConnectionPool.getConnection();
+      if (recensione instanceof RecensioneBean) {
+        ps = connection.prepareStatement(updateSql);
+        ps.setString(1, recensione.getCommento());
+        ps.setInt(2, recensione.getValutazione());
+        ps.setString(3, recensione.getEmail());
+        ps.setInt(4, recensione.getIDopera());
+        ps.executeUpdate();
+        System.out.println("doUpdate:" + ps.toString());
+        connection.commit();
+      }
+    } finally {
+      try {
+        if (ps != null) {
+          ps.close();
+        }
+      } finally {
+        DriverManagerConnectionPool.releaseConnection(connection);
+      }
+    }
   }
 }

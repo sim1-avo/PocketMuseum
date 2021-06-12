@@ -6,10 +6,11 @@
 <head>
 	<meta charset="UTF-8">
 	<title>PocketMuseum</title>
+
 </head>
 	<body>
 
-
+<%@include file="NavigationBar.jsp"%>
 
 <div class="position-realive bg-image" style="background-image: url(assets/img/pattern_1.svg);">
   <div class="page-section">
@@ -44,7 +45,11 @@
         <!-- FINE SINISTRA 1 -->
 
         <!-- SINISTRA 2 -->
-
+                <style>
+                	#containerId{
+                	  display: none;
+                	}
+                </style>
                 <div id="end-left-tour" class="col-lg-6 wow fadeInUp">
 
                 <p style= "color:darkgoldenrod">&#x2190; <a id="tornaindietro" onclick="AnnullaShowBuyTicket()" >  Torna Indietro </a> </p>

@@ -1,7 +1,7 @@
 	function validate(){
 		var stringa = document.getElementById('descrizioneOpera').value;
 
-		if(!stringa.match(/^[a-zA-Z 0-9 , . ' ; : " \n \- � � � � � � � �, �, �, �, �, �, � ( ) ? ]{5,5000}$/)){
+		if(stringa == null){
 			document.getElementById('textarea-error').innerHTML='Formato non rispettato';
 			return false;
 		}
@@ -61,7 +61,7 @@
 		var stringa = "id=" + id + "&json=true";
 		xhr.open("POST","CercaOperaById", false);
 		xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-		xhr.setRequestHeader("connection","close");
+		//xhr.setRequestHeader("connection","close");
 
 		xhr.onreadystatechange = function(){
 			if(xhr.readyState == 4 && xhr.status == 200){
@@ -86,7 +86,7 @@
 
 		var xhr = new XMLHttpRequest();
 		xhr.open("GET","RecuperaImmagini?id=" + id, false);
-		xhr.setRequestHeader("connection","close");
+		/*xhr.setRequestHeader("connection","close");*/
 
 		xhr.onreadystatechange = function(){
 			if(xhr.readyState == 4 && xhr.status == 200){

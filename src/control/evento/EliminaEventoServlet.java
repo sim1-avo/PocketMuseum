@@ -23,7 +23,7 @@ public class EliminaEventoServlet extends HttpServlet {
 
         //Controllo se qualche utente non 'guida' provi ad eliminare un evento
         if(request.getSession().getAttribute("guida") == null ) {
-            response.sendRedirect("Log.jsp");
+            response.sendRedirect("Login.jsp");
             return;
         }
 
@@ -51,7 +51,7 @@ public class EliminaEventoServlet extends HttpServlet {
             throwables.printStackTrace();
         }
 
-        EliminaEventoServlet.forwardRequest(request, response, "./GuidaPageServlet");
+        EliminaEventoServlet.forwardRequest(request, response, "/Eventi.jsp");
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

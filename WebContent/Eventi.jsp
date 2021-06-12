@@ -7,7 +7,7 @@
   <title>Pocket Museum - Events</title>
 </head>
 <body>
-
+<%@include file="NavigationBar.jsp"%>
 <div class="position-realive bg-image" style="background-image: url(assets/img/pattern_1.svg);">
 <div class="page-section">
   <div class="container">
@@ -43,6 +43,15 @@
   <%}%>
 
    <%
+
+       ArrayList<EventoBean> eventi = (ArrayList<EventoBean> ) request.getAttribute("eventi");
+
+       if(eventi == null) {
+           response.sendRedirect(response.encodeRedirectURL("./MostraEventiServlet"));
+           return;
+       }
+
+
 
    if(eventi.size()!=0){
    %>

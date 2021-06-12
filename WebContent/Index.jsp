@@ -30,14 +30,15 @@
 <%
 if(session.getAttribute("guida")!=null){ 
 
-response.sendRedirect(response.encodeRedirectURL("GuidaPP.jsp"));
+response.sendRedirect(response.encodeRedirectURL("Opere.jsp"));
 return;
 }
 
-if(session.getAttribute("biglietteria")!=null){ 
-response.sendRedirect(response.encodeRedirectURL("BiglietteriaPersonalPage.jsp"));
+if(session.getAttribute("biglietteria")!=null || session.getAttribute("utente")!=null ){
+response.sendRedirect(response.encodeRedirectURL("Tour.jsp"));
 return;
 }
+
 
 
 	if ((request.getParameter("fineTurno")) != null) {

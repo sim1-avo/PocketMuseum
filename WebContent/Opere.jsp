@@ -22,6 +22,7 @@
 </head>
 	<body>
 
+<%@include file="NavigationBar.jsp"%>
 
 <div class="position-realive bg-image" style="background-image: url(assets/img/pattern_1.svg);">
 <div class="page-section">
@@ -66,11 +67,11 @@
          				  <div class="imgCop">
          				    <div class="infimg">
          				        <p>Immagine</p>
-         				        <img id="immagineOpera" style="color:grey"alt="Immagine">
+         				        <img id="immagineOpera" style="color:grey" alt="Immagine" src="assets/img/horse.svg">
          				    </div>
          				    <div class="infimg">
                                 <p>Copertina</p>
-                                <img  id="copertinaOpera" style="color:grey" alt="Copertina">
+                                <img  id="copertinaOpera" style="color:grey" alt="Copertina" src="assets/img/image.svg">
                             </div>
          				  </div>
 

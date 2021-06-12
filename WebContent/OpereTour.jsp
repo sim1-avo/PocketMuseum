@@ -66,7 +66,7 @@ utente = (UtenteBean) session.getAttribute("utente");
 <!-- OperTour -->
 <nav class="navbar navbar-expand-lg navbar-light navbar-floating">
   <div class="container">
-    <a class="navbar-brand" href="UtentePP.jsp">
+    <a class="navbar-brand" href="Tour.jsp">
       <img src="assets/logo.png" alt="" width="40">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
@@ -109,7 +109,7 @@ utente = (UtenteBean) session.getAttribute("utente");
 
       </ul>
 		<div class="ml-auto my-2 my-lg-0">
-           <a href="UtentePP.jsp"> <button class="btn btn-dark rounded-pill"> Esci dal tour </button> </a>
+           <a href="Tour.jsp"> <button class="btn btn-dark rounded-pill"> Esci dal tour </button> </a>
         </div>
     </div>
   </div>

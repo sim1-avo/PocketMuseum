@@ -6,7 +6,7 @@
 </head>
 	<body>
 
-
+<%@include file="NavigationBar.jsp"%>
 <div class="position-realive bg-image" style="background-image: url(assets/img/pattern_1.svg);">
 <div class="page-section">
   <div class="container">

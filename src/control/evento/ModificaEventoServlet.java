@@ -27,17 +27,17 @@ public class ModificaEventoServlet extends HttpServlet {
         super();
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         //Controllo se qualche utente non 'guida' provi a modificare un evento
         if(request.getSession().getAttribute("guida") == null ) {
-            response.sendRedirect("Log.jsp");
+            response.sendRedirect("Login.jsp");
             return;
         }
 
         if ( ! ModificaEventoServlet.checkParameters(request)) {
             ModificaEventoServlet.getAlert("error", request);
-            ModificaEventoServlet.forwardRequest(request, response, "./GuidaPageServlet");
+            ModificaEventoServlet.forwardRequest(request, response, "/Eventi.jsp");
         }
 
         //Validate parameters
@@ -60,10 +60,10 @@ public class ModificaEventoServlet extends HttpServlet {
             boolean resultUpdate = modelEvent.doUpdate(evento);
             if(resultUpdate) {
                 ModificaEventoServlet.getAlert("success", request);
-                ModificaEventoServlet.forwardRequest(request, response, "./GuidaPageServlet");
+                ModificaEventoServlet.forwardRequest(request, response, "/Eventi.jsp");
             } else {
                 ModificaEventoServlet.getAlert("error", request);
-                ModificaEventoServlet.forwardRequest(request, response, "./GuidaPageServlet");
+                ModificaEventoServlet.forwardRequest(request, response, "/Eventi.jsp");
             }
 
         } catch (SQLException throwables) {

@@ -24,6 +24,28 @@
 %>
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="assets/css/maicons.css">
+
+  <link rel="stylesheet" href="assets/vendor/animate/animate.css">
+
+  <link rel="stylesheet" href="assets/vendor/owl-carousel/css/owl.carousel.min.css">
+
+  <link rel="stylesheet" href="assets/css/bootstrap.css">
+
+  <link rel="stylesheet" href="assets/css/mobster.css">
+
+  <link rel="stylesheet" href="assets/css/flipbox.css">
+
+  <link rel="stylesheet" href="assets/css/ticket.css">
+
+  <link rel="stylesheet" href="assets/css/cardEvents.css">
+
+  <link rel="stylesheet" href="assets/css/historyBiglietteria.css">
+  <link rel="stylesheet" href="assets/css/AddChangeRemoveOpere.css">
+</head>
 
 <body>
 
@@ -33,7 +55,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light navbar-floating">
   <div class="container">
-    <a class="navbar-brand" href="UtentePP.jsp">
+    <a class="navbar-brand" href="Tour.jsp">
       <img src="assets/logo.png" alt="" width="40">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,16 +66,16 @@
       <ul class="navbar-nav ml-lg-5 mt-3 mt-lg-0">
 
         <li class="nav-item">
-          <a class="nav-link" onclick="ShowTour()" href="#tour">Tour</a>
+          <a class="nav-link"  href="Tour.jsp">Tour</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#userdata" onclick="ShowUserData()">Your Data</a>
+          <a class="nav-link" href="UserData.jsp">Your Data</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#history" onclick="ShowHistory()">History</a>
+          <a class="nav-link" href="History.jsp">History</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#events"onclick="ShowEvents()">Events</a>
+          <a class="nav-link" href="Eventi.jsp">Events</a>
         </li>
 
 
@@ -87,7 +109,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light navbar-floating">
   <div class="container">
-    <a class="navbar-brand" href="BiglietteriaPP.jsp">
+    <a class="navbar-brand" href="Tour.jsp">
       <img src="assets/logo.png" alt="" width="40">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
@@ -98,16 +120,16 @@
       <ul class="navbar-nav ml-lg-5 mt-3 mt-lg-0">
 
         <li class="nav-item">
-          <a class="nav-link" onclick="ShowTour()" href="#tour">Tour</a>
+          <a class="nav-link" onclick="Tour.jsp">Tour</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#userdata" onclick="ShowUserData()">Your Data</a>
+          <a class="nav-link" href="UserData.jsp">Your Data</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#history" onclick="ShowHistory()">History</a>
+          <a class="nav-link" href="History.jsp">History</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#events"onclick="ShowEvents()">Events</a>
+          <a class="nav-link" href="Eventi.jsp">Events</a>
         </li>
 
       </ul>
@@ -138,7 +160,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light navbar-floating">
   <div class="container">
-    <a class="navbar-brand" href="GuidaPP.jsp">
+    <a class="navbar-brand" href="Opere.jsp">
       <img src="assets/logo.png" alt="" width="40">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
@@ -149,13 +171,13 @@
       <ul class="navbar-nav ml-lg-5 mt-3 mt-lg-0">
 
         <li class="nav-item">
-          <a class="nav-link" href="#opere" onclick="ShowOpere()" >Opere</a>
+          <a class="nav-link" href="Opere.jsp">Opere</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#events"onclick="ShowEvents()">Events</a>
+          <a class="nav-link" href="Eventi.jsp">Events</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#userdata" onclick="ShowUserData()">Your Data</a>
+          <a class="nav-link" href="UserData.jsp">Your Data</a>
         </li>
 
       </ul>

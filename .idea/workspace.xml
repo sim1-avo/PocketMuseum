@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5b5c7f6a-97b6-4822-9b02-795d943c24ad" name="Default Changelist" comment="Modifica classe AggiungiRecensione" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/sim1Branch" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="ProjectId" id="1rgNVpn9fitPAjfeX4uwMZLpUJk" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/WebContent/assets/img" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.48020434" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build.android" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Simone\IdeaProjects\PocketMuseum\WebContent\assets\img" />
+      <recent name="C:\Users\Simone\IdeaProjects\PocketMuseum\src\model" />
+      <recent name="C:\Users\Simone\IdeaProjects\PocketMuseum\WebContent" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Simone\IdeaProjects\PocketMuseum\WebContent" />
+      <recent name="C:\Users\Simone\IdeaProjects\PocketMuseum\test\model" />
+      <recent name="C:\Users\Simone\IdeaProjects\PocketMuseum\test\control" />
+      <recent name="C:\Users\Simone\IdeaProjects\PocketMuseum\WebContent\assets\img" />
+      <recent name="C:\Users\Simone\IdeaProjects\PocketMuseum\WebContent\assets\biglietteria" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="com.poratu.idea.plugins.tomcat" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Smart Tomcat.Unnamed">
+    <configuration name="All in PocketMuseum_C09 (2)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PocketMuseum_C09" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in PocketMuseum_C09 (3)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PocketMuseum_C09" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in PocketMuseum_C09 (4)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PocketMuseum_C09" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in PocketMuseum_C09 (5)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PocketMuseum_C09" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in PocketMuseum_C09" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PocketMuseum_C09" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Unnamed" type="com.poratu.idea.plugins.tomcat" factoryName="SMART_TOMCAT_FACTORY" nameIsGenerated="true">
+      <option name="adminPort" value="8005" />
+      <option name="contextPath" value="/PocketMuseum" />
+      <option name="docBase" value="$PROJECT_DIR$/WebContent" />
+      <option name="envOptions" />
+      <option name="passParentEnvironmentVariables" value="true" />
+      <option name="port" value="8080" />
+      <option name="tomcatInfo">
+        <TomcatInfo>
+          <option name="name" value="Apache Tomcat/9.0.38" />
+          <option name="number" value="0" />
+          <option name="path" value="C:\Users\Simone\Downloads\apache-tomcat-9.0.38-windows-x64\apache-tomcat-9.0.38" />
+          <option name="version" value="9.0.38.0" />
+        </TomcatInfo>
+      </option>
+      <option name="vmOptions" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="com.poratu.idea.plugins.tomcat" factoryName="SMART_TOMCAT_FACTORY">
+      <option name="adminPort" value="8005" />
+      <option name="contextPath" value="/PocketMuseum_C09" />
+      <option name="docBase" value="$PROJECT_DIR$/WebContent" />
+      <option name="envOptions" />
+      <option name="passParentEnvironmentVariables" value="true" />
+      <option name="port" value="8080" />
+      <option name="tomcatInfo">
+        <TomcatInfo>
+          <option name="name" value="Apache Tomcat/9.0.38" />
+          <option name="number" value="0" />
+          <option name="path" value="C:\Users\Simone\Downloads\apache-tomcat-9.0.38-windows-x64\apache-tomcat-9.0.38" />
+          <option name="version" value="9.0.38.0" />
+        </TomcatInfo>
+      </option>
+      <option name="vmOptions" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.All in PocketMuseum_C09 (5)" />
+        <item itemvalue="JUnit.All in PocketMuseum_C09 (2)" />
+        <item itemvalue="JUnit.All in PocketMuseum_C09 (4)" />
+        <item itemvalue="JUnit.All in PocketMuseum_C09 (3)" />
+        <item itemvalue="JUnit.All in PocketMuseum_C09" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5b5c7f6a-97b6-4822-9b02-795d943c24ad" name="Default Changelist" comment="" />
+      <created>1619393801761</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1619393801761</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Manutenzione UI/UX lato utente.&#10;Nuove interfacce:&#10;    Index.jsp,&#10;    Login.jsp, &#10;    UtentePP.jsp, &#10;    History.jsp, &#10;    UserData.jsp, &#10;    Events.jsp, &#10;    OpereTour.jsp, &#10;    Tour.jsp;&#10;&#10;New file css e js (assets/css, assets/js).&#10;&#10;Modificate HomepageServlet, ServletLogin e ServletLogout con nuovi reindirizzamenti&#10;Modificato Homepage.js (scripts.js) con nuovo reindirizzamento">
+      <created>1619640489476</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1619640489477</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Manutenzione UI/UX lato utente.&#10;Nuove interfacce:&#10;    Index.jsp,&#10;    Login.jsp, &#10;    UtentePP.jsp, &#10;    History.jsp, &#10;    UserData.jsp, &#10;    Events.jsp, &#10;    OpereTour.jsp, &#10;    Tour.jsp;&#10;&#10;New file css e js (assets/css, assets/js).&#10;&#10;Modificate HomepageServlet, ServletLogin e ServletLogout con nuovi reindirizzamenti&#10;Modificato Homepage.js (scripts.js) con nuovo reindirizzamento">
+      <created>1619891013190</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1619891013190</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Manutenzione UI/UX lato Biglietteria e Guida.&#10;Nuove interfacce:&#10;    GuidaPP.jsp,&#10;    Opere.jsp,&#10;&#10;New file css e js (assets/css, assets/js).&#10;AddChangeRemoveOpere.js&#10;AddChangeRemoveOpere.css&#10;&#10;Modificate MostraEventiServlet, GuidaPageServlet e LoginServlet con nuovi reindirizzamenti&#10;Modificata utentepp.js con nuove funzioni per la guida e la biglietteria.">
+      <created>1621001576508</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1621001576508</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Manutenzione UI/UX ModificaEvento, lato Guida.&#10;Manutenzione UI/UX OpereTour, lato Utente (aggiunta attrbuto commento durante l'inserimento della recensione).&#10;Modifica db:&#10;Inserimento attributo 'commento' nella tabella 'recensioni'&#10;Modificato model e control opera con nuovo attributo 'commento':&#10;-RecensioneBean,&#10;-AggiungiRecensione,&#10;-RecensioneBean&#10;&#10;Nuove interfacce:&#10;    GuidaPP.jsp,&#10;    Opere.jsp,">
+      <created>1623422921770</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1623422921770</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Modifica Struttura page Utente, Guida e Biglietteria:&#10; -Elimainate pagine userpp.jsp, guidapp, biglietteriapp.jsp&#10; -Modificate nuove homepage: Guida: Opere.jjsp, Utente e Biglietteria: Tour.jsp&#10; -Modifica nelle servlet: reindirizzamento page con le nuove pagine&#10;Sistemato acquisto biglietto.&#10;&#10;Manutenzione UI/UX NavigationBar.">
+      <created>1623513821110</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1623513821110</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Modifica UI/UX&#10;Inerita la visualizzazione delle recensioni&#10;Eliminazioni di file non utili.">
+      <created>1624548892466</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1624548892466</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Modifica classe AggiungiRecensione">
+      <created>1624549014577</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1624549014577</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.jsp" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Manutenzione UI/UX lato utente.&#10;Nuove interfacce:&#10;    Index.jsp,&#10;    Login.jsp, &#10;    UtentePP.jsp, &#10;    History.jsp, &#10;    UserData.jsp, &#10;    Events.jsp, &#10;    OpereTour.jsp, &#10;    Tour.jsp;&#10;&#10;New file css e js (assets/css, assets/js).&#10;&#10;Modificate HomepageServlet, ServletLogin e ServletLogout con nuovi reindirizzamenti&#10;Modificato Homepage.js (scripts.js) con nuovo reindirizzamento" />
+    <MESSAGE value="Manutenzione UI/UX lato Biglietteria e Guida.&#10;Nuove interfacce:&#10;    GuidaPP.jsp,&#10;    Opere.jsp,&#10;&#10;New file css e js (assets/css, assets/js).&#10;AddChangeRemoveOpere.js&#10;AddChangeRemoveOpere.css&#10;&#10;Modificate MostraEventiServlet, GuidaPageServlet e LoginServlet con nuovi reindirizzamenti&#10;Modificata utentepp.js con nuove funzioni per la guida e la biglietteria." />
+    <MESSAGE value="Manutenzione UI/UX ModificaEvento, lato Guida.&#10;Manutenzione UI/UX OpereTour, lato Utente (aggiunta attrbuto commento durante l'inserimento della recensione).&#10;Modifica db:&#10;Inserimento attributo 'commento' nella tabella 'recensioni'&#10;Modificato model e control opera con nuovo attributo 'commento':&#10;-RecensioneBean,&#10;-AggiungiRecensione,&#10;-RecensioneBean&#10;&#10;Nuove interfacce:&#10;    GuidaPP.jsp,&#10;    Opere.jsp," />
+    <MESSAGE value="Modifica Struttura page Utente, Guida e Biglietteria:&#10; -Elimainate pagine userpp.jsp, guidapp, biglietteriapp.jsp&#10; -Modificate nuove homepage: Guida: Opere.jjsp, Utente e Biglietteria: Tour.jsp&#10; -Modifica nelle servlet: reindirizzamento page con le nuove pagine&#10;Sistemato acquisto biglietto.&#10;&#10;Manutenzione UI/UX NavigationBar." />
+    <MESSAGE value="Modifica UI/UX&#10;Inerita la visualizzazione delle recensioni&#10;Eliminazioni di file non utili." />
+    <MESSAGE value="Modifica classe AggiungiRecensione" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modifica classe AggiungiRecensione" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/PocketMuseum$All_in_PocketMuseum_C09.ic" NAME="All in PocketMuseum_C09 Coverage Results" MODIFIED="1623495622808" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/PocketMuseum$AggiungiRecensioneTC.ic" NAME="AggiungiRecensioneTC Coverage Results" MODIFIED="1623878863696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/PocketMuseum$All_in_PocketMuseum_C09__5_.ic" NAME="All in PocketMuseum_C09 (5) Coverage Results" MODIFIED="1624548414308" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/PocketMuseum$All_in_PocketMuseum_C09__3_.ic" NAME="All in PocketMuseum_C09 (3) Coverage Results" MODIFIED="1623881244339" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/PocketMuseum$EliminaEventoTC_EliminaEvento.ic" NAME="EliminaEventoTC.EliminaEvento Coverage Results" MODIFIED="1623877514166" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>control.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PocketMuseum$All_in_PocketMuseum_C09__2_.ic" NAME="All in PocketMuseum_C09 (2) Coverage Results" MODIFIED="1624547835752" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/PocketMuseum$All_in_PocketMuseum_C09__4_.ic" NAME="All in PocketMuseum_C09 (4) Coverage Results" MODIFIED="1624359235902" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/PocketMuseum$All_in_PocketMuseum_C09__1_.ic" NAME="All in PocketMuseum_C09 (1) Coverage Results" MODIFIED="1623880023995" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>

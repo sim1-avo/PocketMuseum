@@ -32,11 +32,7 @@ public class MostraEventiServlet extends HttpServlet {
             throws  IOException, ServletException {
         ArrayList<EventoBean> eventi = null;
         UtenteBean guida = (UtenteBean) request.getSession().getAttribute("guida");
-        String secure = null;
         try {
-            if (guida != null) {
-                secure = guida.getPassword().substring(0);
-            }
             eventi =  model.doRetrieveAll("DESC");
         } catch (Exception e) {
             e.printStackTrace();

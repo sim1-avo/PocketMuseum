@@ -47,7 +47,7 @@ public class GuidaPageServlet extends HttpServlet {
     }
     request.setAttribute("eventi", eventi);
     request.setAttribute("opere", opere);
-    RequestDispatcher rd = request.getRequestDispatcher("/GuidaPP.jsp");
+    RequestDispatcher rd = request.getRequestDispatcher("/Opere.jsp");
     rd.forward(request, response);
   }
 

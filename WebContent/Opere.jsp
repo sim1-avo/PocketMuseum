@@ -2,7 +2,7 @@
 <%/*
 	UtenteBean b = (UtenteBean) session.getAttribute("guida");
 	if(b == null || !(b.getTipo().equals("guida"))){
-		response.sendRedirect("./Homepage.jsp");
+		response.sendRedirect("./Login.jsp");
 		return;
 	}*/
 

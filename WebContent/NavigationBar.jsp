@@ -3,14 +3,11 @@
 <%@page import="java.util.ArrayList, model.biglietto.*, model.utente.*, model.evento.*,java.sql.Date,java.sql.Timestamp" %>
 
 <%
-	/*if(request.getSession(false).getAttribute("utente")==null) {
-		response.sendRedirect("Login.jsp");
-		return;
-	*/
-	if(session.getAttribute("biglietteria")==null && session.getAttribute("utente")==null && session.getAttribute("guida")==null){
+
+	/*if(session.getAttribute("biglietteria")==null && session.getAttribute("utente")==null && session.getAttribute("guida")==null){
            response.sendRedirect("Login.jsp");
            return;
-       }
+       }*/
 
     	UtenteBean utente= new UtenteBean();
     	  if(session.getAttribute("utente") != null){
@@ -44,6 +41,7 @@
   <link rel="stylesheet" href="assets/css/cardEvents.css">
 
   <link rel="stylesheet" href="assets/css/historyBiglietteria.css">
+
   <link rel="stylesheet" href="assets/css/AddChangeRemoveOpere.css">
 </head>
 
@@ -202,6 +200,39 @@
 </nav>
 <%}%>
 
+<%if(session.getAttribute("biglietteria") == null &&
+    session.getAttribute("guida") == null &&
+    session.getAttribute("utente") == null){ %>
+    <nav class="navbar navbar-expand-lg navbar-light navbar-floating">
+      <div class="container">
+        <a class="navbar-brand" href="Index.jsp">
+          <img src="assets/logo.png" alt="" width="40">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarToggler">
+          <ul class="navbar-nav ml-lg-5 mt-3 mt-lg-0">
+
+            <li class="nav-item">
+              <a class="nav-link" style="color:white" href="Index.jsp">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color:white" href="Eventi.jsp">Events</a>
+            </li>
+          </ul>
+            <div class="ml-auto my-2 my-lg-0">
+
+              <button class="btn btn-primary rounded-pill" onclick="nascondilog()">Register Now</button>
+            </div>
+
+
+
+        </div>
+      </div>
+    </nav>
+    <%}%>
 
 
 

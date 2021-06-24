@@ -50,7 +50,7 @@ public class EliminaEventoServlet extends HttpServlet {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-
+        response.setContentType("text/html");
         EliminaEventoServlet.forwardRequest(request, response, "/Eventi.jsp");
     }
 

@@ -22,12 +22,11 @@ public class ModificaEventoPageServlet extends HttpServlet {
 
         //Controllo se qualche utente non 'guida' provi ad eliminare un evento
         if(request.getSession().getAttribute("guida") == null ) {
-            response.sendRedirect("Log.jsp");
+            response.sendRedirect("Login.jsp");
             return;
         }
 
         if ( ! ModificaEventoPageServlet.checkParameters(request)) {
-            ModificaEventoPageServlet.getAlert("error", request);
             ModificaEventoPageServlet.forwardRequest(request, response, "./GuidaPageServlet");
         }
 
@@ -35,7 +34,6 @@ public class ModificaEventoPageServlet extends HttpServlet {
         try {
             EventoBean evento = new EventoBean(idEvento);
             if (evento == null) {
-                ModificaEventoPageServlet.getAlert("error", request);
                 ModificaEventoPageServlet.forwardRequest(request, response, "./GuidaPageServlet");
             } else {
                 request.setAttribute("evento", evento);
@@ -44,6 +42,8 @@ public class ModificaEventoPageServlet extends HttpServlet {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+        response.setContentType("text/html");
+
 
     }
 
@@ -73,11 +73,5 @@ public class ModificaEventoPageServlet extends HttpServlet {
      *  request.
      *  @param req the request of the servlet
      *  @param type the type of alert: is accepted only 'error'. */
-    private static void getAlert(String type, HttpServletRequest req) {
-        if (type.equals("error")) {
-            String messageAlert = "<strong>Errore.</strong> Si è verificato un problema durante la modifica dell'evento.";
-            req.setAttribute("alertError", true);
-            req.setAttribute("messageAlert", messageAlert);
-        }
-    }
+
 }

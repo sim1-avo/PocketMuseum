@@ -19,7 +19,10 @@ utente = (UtenteBean) session.getAttribute("utente");
 
 
 	OperaModelDM listaopere = new OperaModelDM();
+	RecensioneModelDM listaRec = new RecensioneModelDM();
 	ArrayList<OperaBean> opere = (ArrayList<OperaBean>) request.getAttribute("opere");
+	ArrayList<RecensioneBean> recensioni = (ArrayList<RecensioneBean>) request.getAttribute("recensioni");
+	ArrayList<RecensioneBean> recensioniList = new ArrayList<RecensioneBean>();
 
     	if(opere == null){
     		String s = request.getParameter("search");
@@ -75,9 +78,9 @@ utente = (UtenteBean) session.getAttribute("utente");
 
     <div class="collapse navbar-collapse" id="navbarToggler">
       <ul class="navbar-nav ml-lg-5 mt-3 mt-lg-0">
-                               <!--CAMBIARE CON != null-->
+
        <%
-        if(session.getAttribute("codiceValido") == null){%>
+        if(session.getAttribute("codiceValido") != null){%>
         <li>
         <form action="CercaOpera"  style="height:10px; margin-bottom:20px">
             <input id="srcOpr" name="search" class="mb-4 fw-normal" type="search" placeholder="Search" aria-label="Search">
@@ -140,8 +143,32 @@ utente = (UtenteBean) session.getAttribute("utente");
 
                 <div class="avatar mt-3">
                     <div class="avatar-caption" style="overflow-y: scroll; height: 138px;">
-                    <div class="fs-vsmall fw-medium" style="color:black"><%=opera.getDescrizione() %></div>
+                        <div class="fs-vsmall fw-medium" style="color:black"><%=opera.getDescrizione() %></div>
+                    </div>
                 </div>
+
+                <%
+                recensioniList = (ArrayList<RecensioneBean>) listaRec.doRetrieveById(opera.getId());
+
+                if(recensioniList.size() != 0) {
+                %>
+                <div class="avatar mt-3">
+                    <div id="recdd" class="avatar-caption" style="overflow: auto; height: auto;">
+                          <b style="color:black; font-weight: 400; font-size: smaller;">Recensioni</b>
+                          <% for(RecensioneBean r : recensioniList){
+                          %>
+                          <div id="elencoRec">
+                          <div id="stella" class="fs-vsmall fw-medium" style="color:black">&#x2B50;<%= r.getValutazione() %></div>
+                          <%if (r.getCommento().length() > 1){ %>
+                          <div class="fs-vsmall fw-medium" style="color:black"> "<%= r.getCommento() %>"</div>
+                          <%}%>
+                          </div>
+                          <%
+                          }
+                          %>
+                    </div>
+                </div>
+                <%}%>
 
                 <form id="recensioneForm" action="AggiungiRecensione" method="get">
 
@@ -156,7 +183,8 @@ utente = (UtenteBean) session.getAttribute("utente");
                     <br>
                     <center><input class="btn btn-primary rounded-pill" style="padding: revert;" type="submit" value="Invia recensione"></center>
                 </form>
-              </div>
+
+
           </div>
           <%}else{ %>
           <div></div>
@@ -176,10 +204,11 @@ utente = (UtenteBean) session.getAttribute("utente");
 		   	  int idOp= opera.getId();
 		%>
           <div class="item">
+
             <div class="avatar mt-3">
               <div class="avatar-caption">
                 <p class="mb-0 fw-medium fg-primary" style="color:darkgoldenrod"> <%=opera.getNome() %></p>
-                <div class="fs-vsmall fw-medium" style="color:black"><%=opera.getAutore() %></div>
+                <div class="fs-vsmall fw-medium" style="color:black"><%=opera.getAutore() %> </div>
               </div>
             </div>
 
@@ -190,9 +219,31 @@ utente = (UtenteBean) session.getAttribute("utente");
             <div class="avatar mt-3">
                 <div class="avatar-caption" style="overflow-y: scroll; height: 138px;">
                 <div class="fs-vsmall fw-medium" style="color:black"><%=opera.getDescrizione() %></div>
+                </div>
             </div>
 
+            <%
+            recensioniList = (ArrayList<RecensioneBean>) listaRec.doRetrieveById(opera.getId());
 
+            if(recensioniList.size() != 0) {
+            %>
+            <div class="avatar mt-3">
+                <div id="recdd" class="avatar-caption" style="overflow: auto; height: auto;">
+                      <b style="color:black; font-weight: 400; font-size: smaller;">Recensioni</b>
+                      <% for(RecensioneBean r : recensioniList){
+                      %>
+                      <div id="elencoRec">
+                      <div id="stella" class="fs-vsmall fw-medium" style="color:black">&#x2B50;<%= r.getValutazione() %></div>
+                      <%if (r.getCommento().length() > 1){ %>
+                      <div class="fs-vsmall fw-medium" style="color:black"> "<%= r.getCommento() %>"</div>
+                      <%}%>
+                      </div>
+                      <%
+                      }
+                      %>
+                </div>
+            </div>
+            <%}%>
 
             <form id="recensioneForm" action="AggiungiRecensione" method="get">
 
@@ -208,8 +259,14 @@ utente = (UtenteBean) session.getAttribute("utente");
             <center><input class="btn btn-primary rounded-pill" style="padding: revert;" type="submit" value="Invia recensione"></center>
             </form>
 
-          </div>
+
+
+
+
+
+
       </div>
+
       <%}else{ %>
       <div></div>
       <%}
@@ -218,7 +275,7 @@ utente = (UtenteBean) session.getAttribute("utente");
   </div>
 </div>
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="assets/js/jquery-3.5.1.min.js"></script>
 
 <script src="assets/js/bootstrap.bundle.min.js"></script>

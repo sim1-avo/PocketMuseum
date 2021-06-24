@@ -129,6 +129,36 @@ public class RecensioneModelDM implements RecensioneModel<RecensioneBean> {
     }
     return recensioni;
   }
+  @Override
+  public Collection<RecensioneBean> doRetrieveAll() throws SQLException {
+    Connection connection = null;
+    PreparedStatement preparedStatement = null;
+    ArrayList<RecensioneBean> recensioni = new ArrayList<RecensioneBean>();
+    String selectSql = "SELECT * FROM Recensioni";
+    try {
+      connection = DriverManagerConnectionPool.getConnection();
+        preparedStatement = connection.prepareStatement(selectSql);
+        System.out.println("doRetrieveAll: " + preparedStatement.toString());
+        ResultSet rs = preparedStatement.executeQuery();
+        while (rs.next()) {
+          RecensioneBean bean = new RecensioneBean();
+          bean.setValutazione(rs.getInt("Valutazione"));
+          bean.setEmail(rs.getString("email"));
+          bean.setIDopera(rs.getInt("IDopera"));
+          bean.setCommento(rs.getString("commento"));
+          recensioni.add(bean);
+        }
+    } finally {
+      try {
+        if (preparedStatement != null) {
+          preparedStatement.close();
+        }
+      } finally {
+        DriverManagerConnectionPool.releaseConnection(connection);
+      }
+    }
+    return recensioni;
+  }
   
   @Override
   public int mediaRecensioni(Integer idOpera) throws SQLException {

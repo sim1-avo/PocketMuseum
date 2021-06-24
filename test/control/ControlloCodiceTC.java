@@ -70,7 +70,7 @@ public class ControlloCodiceTC {
 
   @Test
   public void ControlloCodiceTestCodiceEsattoDataSuccessiva() throws ServletException, IOException {
-    request.addParameter("data", "2021-06-15 15:00:00");
+    request.addParameter("data", "2025-06-20 15:00:00");
     request.addParameter("codice", "AAAA0000AAAA");
     servlet.doGet(request, response);
     assertEquals("text/html;charset=UTF-8", response.getContentType());

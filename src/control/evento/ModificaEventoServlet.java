@@ -69,6 +69,8 @@ public class ModificaEventoServlet extends HttpServlet {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+        response.setContentType("text/html");
+
     }
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

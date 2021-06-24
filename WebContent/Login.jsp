@@ -44,42 +44,7 @@ return;
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark navbar-floating">
-  <div class="container">
-    <a class="navbar-brand" href="./Index.jsp">
-      <img src="assets/logo.png" alt="" width="40">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarToggler">
-      <ul class="navbar-nav ml-auto mt-3 mt-lg-0">
-       <!-- <li class="nav-item dropdown active">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="index.html">Homepage 1</a>
-            <a class="dropdown-item active" href="index-2.html">Homepage 2</a>
-          </div>
-        </li>
-        -->
-        <li class="nav-item">
-          <a class="nav-link" href="about.html">Events</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="updates.html">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="contact.html">Contact</a>
-        </li>
-      </ul>
-      <div class="ml-auto my-2 my-lg-0">
-
-        <button class="btn btn-primary rounded-pill" onclick="nascondilog() ">Register Now</button>
-      </div>
-    </div>
-  </div>
-</nav>
+<%@include file="NavigationBar.jsp"%>
 
 <div class="page-hero-section bg-image hero-home-2" style="background-image: url(assets/img/mah3.png);">
   <div class="hero-caption">

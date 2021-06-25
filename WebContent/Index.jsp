@@ -65,13 +65,13 @@ return;
     <div class="collapse navbar-collapse" id="navbarToggler">
       <ul class="navbar-nav ml-lg-5 mt-3 mt-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="Eventi.jsp">Events</a>
+          <a class="nav-link" href="Eventi.jsp">Eventi</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
+          <a class="nav-link" href="#">Chi siamo</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
+          <a class="nav-link" href="#">Contatti</a>
         </li>
       </ul>
       <%if(session.getAttribute("utente") == null && session.getAttribute("biglietteria") == null){ %>

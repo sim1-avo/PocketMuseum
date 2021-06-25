@@ -35,7 +35,7 @@ public class AggiungiRecensione extends HttpServlet {
       throw new IllegalArgumentException("Numero stelle non rispettato");
     }
     if (commento.length() > 100) {
-      throw new IllegalArgumentException("Il formato del commento non è rispettato");
+      throw new IllegalArgumentException("La lunghezza del commento non è rispettata");
     }
     RecensioneBean esiste = new RecensioneBean();
     if (email.length() == 0) {

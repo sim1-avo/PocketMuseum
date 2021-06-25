@@ -19,6 +19,7 @@ public class RecensioneBean implements Serializable {
    * @param idopera codice opera
    * @param valutazione valutazione recensione
    * @param email email dell'utente
+   * @param commento commento recensione
    */
   
   

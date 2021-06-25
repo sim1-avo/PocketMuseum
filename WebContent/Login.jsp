@@ -44,7 +44,34 @@ return;
 </head>
 <body>
 
-<%@include file="NavigationBar.jsp"%>
+<nav class="navbar navbar-expand-lg navbar-light navbar-floating">
+      <div class="container">
+        <a class="navbar-brand" href="Index.jsp">
+          <img src="assets/logo.png" alt="" width="40">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarToggler">
+          <ul class="navbar-nav ml-lg-5 mt-3 mt-lg-0">
+
+            <li class="nav-item">
+              <a class="nav-link" style="color:white" href="Index.jsp">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color:white" href="Eventi.jsp">Eventi</a>
+            </li>
+          </ul>
+            <div class="ml-auto my-2 my-lg-0">
+              <button class="btn btn-primary rounded-pill" onclick="nascondilog()">Registrati</button>
+            </div>
+
+
+
+        </div>
+      </div>
+    </nav>
 
 <div class="page-hero-section bg-image hero-home-2" style="background-image: url(assets/img/mah3.png);">
   <div class="hero-caption">

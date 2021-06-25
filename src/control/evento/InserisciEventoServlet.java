@@ -113,7 +113,7 @@ public class InserisciEventoServlet extends HttpServlet {
                     + " il campo data fine contiene una data antecedente a data inizio");
         }
         response.setContentType("text/html");
-        RequestDispatcher rd = request.getRequestDispatcher("./Homepage.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("./Eventi.jsp");
         rd.forward(request, response);
     }
 }

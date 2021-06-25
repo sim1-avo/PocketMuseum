@@ -67,13 +67,13 @@
           <a class="nav-link"  href="Tour.jsp">Tour</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="UserData.jsp">Your Data</a>
+          <a class="nav-link" href="UserData.jsp">Dati</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="History.jsp">History</a>
+          <a class="nav-link" href="History.jsp">Cronologia</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="Eventi.jsp">Events</a>
+          <a class="nav-link" href="Eventi.jsp">Eventi</a>
         </li>
 
 
@@ -121,13 +121,13 @@
           <a class="nav-link" onclick="Tour.jsp">Tour</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="UserData.jsp">Your Data</a>
+          <a class="nav-link" href="UserData.jsp">Dati</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="History.jsp">History</a>
+          <a class="nav-link" href="History.jsp">Cronologia</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="Eventi.jsp">Events</a>
+          <a class="nav-link" href="Eventi.jsp">Eventi</a>
         </li>
 
       </ul>
@@ -172,10 +172,10 @@
           <a class="nav-link" href="Opere.jsp">Opere</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="Eventi.jsp">Events</a>
+          <a class="nav-link" href="Eventi.jsp">Eventi</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="UserData.jsp">Your Data</a>
+          <a class="nav-link" href="UserData.jsp">Dati</a>
         </li>
 
       </ul>
@@ -216,15 +216,16 @@
           <ul class="navbar-nav ml-lg-5 mt-3 mt-lg-0">
 
             <li class="nav-item">
-              <a class="nav-link" style="color:white" href="Index.jsp">Home</a>
+              <a class="nav-link"  href="Index.jsp">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" style="color:white" href="Eventi.jsp">Events</a>
+              <a class="nav-link"  href="Eventi.jsp">Eventi</a>
             </li>
           </ul>
             <div class="ml-auto my-2 my-lg-0">
-
-              <button class="btn btn-primary rounded-pill" onclick="nascondilog()">Register Now</button>
+              <a href="./Login.jsp" >
+                          <button class="btn btn-primary rounded-pill" h> Login</button>
+                      </a>
             </div>
 
 

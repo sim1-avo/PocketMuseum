@@ -1,5 +1,6 @@
 package control.biglietto;
 
+import java.awt.*;
 import java.io.IOException;
 import java.sql.Timestamp;
 import javax.servlet.RequestDispatcher;
@@ -18,7 +19,6 @@ import model.biglietto.BigliettoModelDM;
 public class ControlloCodice extends HttpServlet {
   private static final long serialVersionUID = 1L;
   private static BigliettoModelDM ticket = new BigliettoModelDM(null);
-
   public ControlloCodice() {
     super();
   }
@@ -46,7 +46,7 @@ public class ControlloCodice extends HttpServlet {
       if (ticket.doRetrieveByKey(codice) && (data.before(fine) && (data.after(inizio)))) {
         session.setAttribute("codiceValido", codice);
         RequestDispatcher rd;
-        rd = request.getRequestDispatcher(response.encodeRedirectURL("./ListOpere.jsp"));
+        rd = request.getRequestDispatcher(response.encodeRedirectURL("./OpereTour.jsp"));
         rd.forward(request, response);
       } else {
         response.setContentType("text/html;charset=UTF-8");

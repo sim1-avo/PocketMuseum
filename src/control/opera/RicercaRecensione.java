@@ -41,7 +41,7 @@ public class RicercaRecensione extends HttpServlet {
       e.printStackTrace();
     }
    
-    RequestDispatcher rd = request.getRequestDispatcher("./ListOpere.jsp");
+    RequestDispatcher rd = request.getRequestDispatcher("./OpereTour.jsp");
     rd.forward(request, response);
   }
 }

@@ -1,0 +1,49 @@
+#research {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 60px;
+
+}
+#chartContainer {
+    /* background-color: #ba860000; */
+    /* border-radius: 10px; */
+    /* margin-top: 30px; */
+    /* margin-bottom: 30px; */
+    /* padding-bottom: 40px; */
+}
+.card-chart {
+    color: darkgoldenrod;
+}
+div#previewB {
+    margin-top: 15px;
+}
+#content{
+    margin-bottom:20px;
+}
+#tableContainer{
+    /*background-color: rgba(0,0,0,0.6);*/
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+
+    padding-bottom: 40px;
+    margin-bottom:40px;
+}
+.table-dark {
+     color: black;
+    background-color: transparent;
+}
+.table-dark th, .table-dark td, .table-dark thead th, .table-dark tbody+tbody {
+    border-bottom-color: #ba8600;
+        border-top: none;
+}
+#result {
+    border-radius: 10px;
+    background-color: white;
+    height: 300px;
+    margin-top: 40px;
+}
+
+table{
+    border-radius: 0px;
+
+}
+

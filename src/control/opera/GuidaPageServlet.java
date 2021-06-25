@@ -8,6 +8,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.evento.EventoBean;
+import model.evento.EventoModelDM;
 import model.opera.OperaBean;
 import model.opera.OperaModelDM;
 
@@ -17,8 +19,9 @@ import model.opera.OperaModelDM;
 @WebServlet("/GuidaPageServlet")
 public class GuidaPageServlet extends HttpServlet {
   private static final long serialVersionUID = 1L;
+  private EventoModelDM modelEventi = new EventoModelDM();
   private OperaModelDM modelOpere = new OperaModelDM();
-    
+
 
   public GuidaPageServlet() {
     super();
@@ -26,22 +29,31 @@ public class GuidaPageServlet extends HttpServlet {
   /**
    * Servlet pagina guida.
    */
-  
+
   public void doGet(HttpServletRequest request, HttpServletResponse response)
-       throws  IOException, ServletException {
+          throws  IOException, ServletException {
+    ArrayList<EventoBean> eventi = null;
     ArrayList<OperaBean> opere = null;
     if (request.getSession().getAttribute("NoDbConnection") != null) {
+      modelEventi = null;
       modelOpere = null;
     }
-        
+
     try {
+      eventi = modelEventi.doRetrieveAll("DESC");
       opere = (ArrayList<OperaBean>) modelOpere.doRetrieveAll("ASC");
     } catch (Exception e) {
       e.printStackTrace();
     }
+    request.setAttribute("eventi", eventi);
     request.setAttribute("opere", opere);
-    RequestDispatcher rd = request.getRequestDispatcher("/GuidaPersonalPage.jsp");
+    RequestDispatcher rd = request.getRequestDispatcher("/Opere.jsp");
     rd.forward(request, response);
+  }
+
+  public void doPost(HttpServletRequest request, HttpServletResponse response)
+          throws  IOException, ServletException {
+    this.doGet(request, response);
   }
 }
 

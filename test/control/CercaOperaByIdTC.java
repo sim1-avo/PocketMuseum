@@ -55,7 +55,7 @@ class CercaOperaByIdTC {
     model.doDelete(1, "mariorossi@gmail.com");
     request.addParameter("id", "1");
     servlet.doPost(request, response);
-    model.doSave(new RecensioneBean(4, "mariorossi@gmail.com", 1));
+    model.doSave(new RecensioneBean(4, "mariorossi@gmail.com", 1,"recensione"));
   }
 
   @Test
@@ -135,7 +135,7 @@ class CercaOperaByIdTC {
     request.getSession().setAttribute("utente", b); 
     servlet.doGet(request, response);
     assertEquals("text/html", response.getContentType());
-    model.doSave(new RecensioneBean(4, "mariorossi@gmail.com", 1));
+    model.doSave(new RecensioneBean(4, "mariorossi@gmail.com", 1, "recensione"));
   }
 
   @AfterEach

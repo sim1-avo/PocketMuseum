@@ -10,9 +10,6 @@ body{
 	
 }
 
-    
-}
-
 
 .btn-default {
     border-color: rgba(24,28,33,0.1);
@@ -44,7 +41,7 @@ label.btn {
     box-shadow: 0 1px 4px rgba(24,28,33,0.012);
     background-color:#343a40!important;
     opacity: 0.85!important;
-    height:550px!important!;
+    height:550px!important;
 	overflow:auto!important;
 }
 
@@ -138,3 +135,32 @@ a.list-group-item:not([href]):not([class]):hover {
   color: #fed136!important;
   
 }
+
+/* Styles Eventi in GuidaPersonalPage.jsp */
+#eventTable .actionEvents ul {
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#eventTable .actionEvents ul li {
+    float: left;
+}
+
+#eventTable .actionEvents ul li svg {
+    font-size: 21px;
+}
+
+#eventTable #copertina img {
+    object-fit: cover;
+}
+
+#sectionEvents .alert button span {
+    font-size: 25px;
+}
+
+#sectionEvents .alert {
+    margin-right: 20px;
+}
+/* END Styles eventi in GuidaPersonalPage.jsp */

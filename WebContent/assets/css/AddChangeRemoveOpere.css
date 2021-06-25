@@ -1,0 +1,48 @@
+
+/*Page Opera.jsp*/
+select.formOpere {
+    background-color: transparent;
+    border: none;
+    color: darkgoldenrod;
+    width: -webkit-fill-available;
+    height: 350px;
+    overflow-y: auto;
+    overflow-x: auto;
+    padding: 10px;
+}
+
+option#aggOp {
+    background-color: darkgoldenrod;
+    border-radius: 20px;
+    margin-bottom: 13px;
+    width: max-content;
+    padding: 5px;
+    color: white;
+}
+
+img#immagineOpera, img#copertinaOpera {
+    width: 100px;
+    border-radius: 20px;
+}
+.infimg {
+    padding: 10px;
+}
+.imgCop {
+    display: flex;
+}
+div#changeOp {
+    display: grid;
+}
+select#selectStato {
+    overflow-y: auto;
+}
+option.listOp {
+    padding: 4px;
+}
+option.listOp:hover{
+    padding: 7px;
+    color: darkgray;
+    text-shadow: 0 0 black;
+    text-decoration: underline;
+
+}

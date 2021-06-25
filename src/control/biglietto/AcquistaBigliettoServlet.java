@@ -67,13 +67,16 @@ public class AcquistaBigliettoServlet extends HttpServlet {
         Date dataInizio = Date.valueOf(request.getParameter("data_inizio"));
         SimpleDateFormat formatter = new SimpleDateFormat("YYYY-MM-DD");
         String strDate = formatter.format(dataInizio);
+        System.out.println("data inizio" + dataInizio);
         String turno = request.getParameter("turno");
-        String dataInizioTurno = strDate + " " + turno + ".0";
+        System.out.println("turno:" + turno);
+        String dataInizioTurno = dataInizio + " " + turno + ".0";
+        System.out.println("insieme" + dataInizioTurno);
         Timestamp ts = Timestamp.valueOf(dataInizioTurno);
         String oraTurno = turno.substring(0, 2);
         int fineTurno = Integer.parseInt(oraTurno) + 2;
         oraTurno = String.valueOf(fineTurno);
-        String dataFineTurno = strDate + " " + oraTurno + turno.substring(2) + ".0";
+        String dataFineTurno = dataInizio + " " + oraTurno + turno.substring(2) + ".0";
         Timestamp ts2 = Timestamp.valueOf(dataFineTurno);
         String nuovoCodice = codeGenerator.nextCode();
         BigliettoBean beanB = new BigliettoBean();
@@ -113,12 +116,12 @@ public class AcquistaBigliettoServlet extends HttpServlet {
         SimpleDateFormat formatter = new SimpleDateFormat("YYYY-MM-DD");
         String strDate = formatter.format(dataInizio);
         String turno = request.getParameter("turno");
-        String dataInizioTurno = strDate + " " + turno + ".0";
+        String dataInizioTurno = dataInizio + " " + turno + ".0";
         Timestamp ts = Timestamp.valueOf(dataInizioTurno);
         String oraTurno = turno.substring(0, 2);
         int fineTurno = Integer.parseInt(oraTurno) + 2;
         oraTurno = String.valueOf(fineTurno);
-        String dataFineTurno = strDate + " " + oraTurno + turno.substring(2) + ".0";
+        String dataFineTurno = dataInizio + " " + oraTurno + turno.substring(2) + ".0";
         Timestamp ts2 = Timestamp.valueOf(dataFineTurno);
         String nuovoCodice = codeGenerator.nextCode();
         BigliettoBean beanB = new BigliettoBean();
@@ -134,7 +137,7 @@ public class AcquistaBigliettoServlet extends HttpServlet {
     }
     
     RequestDispatcher dispatcher = request
-        .getRequestDispatcher(response.encodeRedirectURL("./Homepage.jsp"));
+        .getRequestDispatcher(response.encodeRedirectURL("/Tour.jsp"));
     dispatcher.forward(request, response);
   }
 

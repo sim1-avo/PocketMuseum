@@ -1,0 +1,14 @@
+#editEvent .changeImage-container h4 {
+    color: white;
+}
+
+#editEvent .changeImage-container {
+    padding-left: 13px;
+}
+textarea#descrizione {
+    background-color: #c7c7c7;
+    border-radius: 20px;
+    border-style: none;
+    padding: 8px;
+    color: white;
+}

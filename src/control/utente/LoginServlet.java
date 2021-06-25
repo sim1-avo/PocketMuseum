@@ -43,13 +43,13 @@ public class LoginServlet extends HttpServlet {
       if (password.equals(utente.getPassword())) {
         if  (email.equals("guida@pocketmuseum.it")) {
           request.getSession(true).setAttribute("guida", utente);
-          redirect = "GuidaPersonalPage.jsp";
+          redirect = "Opere.jsp";
         } else if (email.equals("biglietteria@pocketmuseum.it")) {
           request.getSession(true).setAttribute("biglietteria", utente);
-          redirect = "BiglietteriaPersonalPage.jsp";
+          redirect = "Tour.jsp";
         } else {
           request.getSession(true).setAttribute("utente", utente);
-          redirect = "Homepage.jsp";
+          redirect = "Tour.jsp";
         }
       } else {
         throw new IllegalArgumentException("L'accesso non va a buon fine poichè"

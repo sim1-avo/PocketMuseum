@@ -33,7 +33,8 @@ class AggiungiRecensioneTC {
     model.doDelete(2, "mariorossi@gmail.com");
     request.addParameter("operaId", "2");
     request.addParameter("stelle", "4");
-    servlet.doGet(request, response); 
+    request.addParameter("commento", "molto interessante");
+    servlet.doGet(request, response);
   }
   
   @Test
@@ -41,6 +42,7 @@ class AggiungiRecensioneTC {
     request.addParameter("email", "mariorossi@gmail.com");
     request.addParameter("operaId", "2");
     request.addParameter("stelle", "4");
+    request.addParameter("commento", "molto interessante");
     servlet.doGet(request, response); 
   }
   
@@ -49,6 +51,7 @@ class AggiungiRecensioneTC {
     request.addParameter("email", "guida@pocketmuseum.it");
     request.addParameter("operaId", "2");
     request.addParameter("stelle", "4");
+    request.addParameter("commento", "molto interessante");
     servlet.doGet(request, response); 
   }
   
@@ -57,6 +60,7 @@ class AggiungiRecensioneTC {
     request.addParameter("email", "biglietteria@pocketmuseum.it");
     request.addParameter("operaId", "2");
     request.addParameter("stelle", "4");
+    request.addParameter("commento", "molto interessante");
     servlet.doGet(request, response); 
   }
   
@@ -65,6 +69,7 @@ class AggiungiRecensioneTC {
     request.addParameter("email", "");;
     request.addParameter("operaId", "1");
     request.addParameter("stelle", "5");
+    request.addParameter("commento", "molto interessante");
     servlet.doGet(request, response); 
   }
   
@@ -73,6 +78,7 @@ class AggiungiRecensioneTC {
     request.addParameter("email", "pasqualerossi@gmail.com");
     request.addParameter("operaId", "2");
     request.addParameter("stelle", "5");
+    request.addParameter("commento", "molto interessante");
     servlet.doGet(request, response); 
   }
 

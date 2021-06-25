@@ -40,7 +40,7 @@ public class RecuperaOpere extends HttpServlet {
       });
       response.setContentType("text/html");
       request.setAttribute("opere", opere);
-      RequestDispatcher rd = request.getRequestDispatcher("./GestioneOpera.jsp");
+      RequestDispatcher rd = request.getRequestDispatcher("./Opere.jsp");
       rd.forward(request, response);
     } catch (Exception e) { 
       e.printStackTrace();

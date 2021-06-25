@@ -1,0 +1,88 @@
+.ora {
+    border-radius: 20px;
+    background-color: #c7c7c7;
+    border: none;
+    color: white;
+    padding: 8px;
+}
+.selectStar {
+    display: inline-block;
+}
+
+button.searchbtn {
+    background-color: #ba8600;
+    border: none;
+    border-radius: 20px;
+    margin-right: 29px;
+}
+#srcOpr ,.ora#exampleFormControlSelect1{
+    background-color: #c7c7c773;
+    color:gray;
+}
+.checked {
+		  color: orange!important;
+		}
+
+.fa-star{
+			width: 15% !important;
+			height: 15% !important;
+			color:#545b62
+		}
+
+
+
+input[type=range]{
+    -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 300px;
+    height: 5px;
+    background: #ddd;
+    border: none;
+    border-radius: 3px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: goldenrod;
+    margin-top: -4px;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #ccc;
+}
+::before {
+    color: burlywood;
+}
+
+/*PAGINE OPERETOUR*/
+
+div#recdd {
+    background-color: #b8860b21;
+    border-radius: 10px;
+    padding: 4px;
+    filter: drop-shadow(2px 4px 6px darkgoldenrod);
+}
+
+div#elencoRec {
+    background-color: #ba86007a;
+    border-radius: 6px;
+    padding: 5px;
+    filter: initial;
+    /* border-style: ridge; */
+    /* border-color: goldenrod; */
+}
+div#stella {
+    border-bottom-style: inset;
+    border-width: thin;
+    border-color: goldenrod;
+}

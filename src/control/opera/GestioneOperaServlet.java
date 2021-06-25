@@ -131,7 +131,7 @@ public class GestioneOperaServlet extends HttpServlet {
       }
       response.setContentType("text/html");
       request.removeAttribute("opere");
-      response.sendRedirect("GestioneOpera.jsp");
+      response.sendRedirect("Opere.jsp");
     } catch (SQLException e1) {
       e1.printStackTrace();
     }

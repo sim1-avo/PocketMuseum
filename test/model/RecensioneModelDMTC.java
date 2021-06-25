@@ -12,7 +12,7 @@ public class RecensioneModelDMTC {
     RecensioneModelDM model = new RecensioneModelDM();
     model.doDelete(1, "mariorossi@gmail.com");
     model.mediaRecensioni(1);
-    model.doSave(new RecensioneBean(4, "mariorossi@gmail.com", 1));
+    model.doSave(new RecensioneBean(4, "mariorossi@gmail.com", 1, "recensione"));
   }
 
   @Test

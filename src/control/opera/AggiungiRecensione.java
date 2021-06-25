@@ -29,14 +29,18 @@ public class AggiungiRecensione extends HttpServlet {
     String email = request.getParameter("email");
     int operaId = Integer.parseInt(request.getParameter("operaId"));
     int numStelle = Integer.parseInt(request.getParameter("stelle"));
-    
+    String commento = request.getParameter("commento");
+
     if (numStelle < 1 || numStelle > 5) {
       throw new IllegalArgumentException("Numero stelle non rispettato");
+    }
+    if (commento.length() > 100) {
+      throw new IllegalArgumentException("La lunghezza del commento non è rispettata");
     }
     RecensioneBean esiste = new RecensioneBean();
     if (email.length() == 0) {
       RequestDispatcher rd;
-      rd = request.getRequestDispatcher(response.encodeRedirectURL("CercaOperaById?id=" + operaId));
+      rd = request.getRequestDispatcher(response.encodeRedirectURL("CercaOpera?search="));
       rd.forward(request, response);
     }
     try {
@@ -47,15 +51,24 @@ public class AggiungiRecensione extends HttpServlet {
     }
     if (!email.equals("guida@pocketmuseum.it") && !email.equals("biglietteria@pocketmuseum.it")
         && esiste == null) {
-      RecensioneBean recensione = new RecensioneBean(numStelle, email, operaId);
+      RecensioneBean recensione = new RecensioneBean(numStelle, email, operaId, commento);
       try {
         model.doSave(recensione);
       } catch (Exception e) {
         e.printStackTrace();
       }
+    } else if(!email.equals("guida@pocketmuseum.it") && !email.equals("biglietteria@pocketmuseum.it")
+            && esiste != null){
+      RecensioneBean recensione2 = new RecensioneBean(numStelle, email, operaId, commento);
+      try {
+        model.doUpdate(recensione2);
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
+
     }
     RequestDispatcher rd;
-    rd = request.getRequestDispatcher(response.encodeRedirectURL("CercaOperaById?id=" + operaId));
+    rd = request.getRequestDispatcher(response.encodeRedirectURL("CercaOpera?search="));
     rd.forward(request, response);
   }
 }

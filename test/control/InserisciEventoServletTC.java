@@ -2,6 +2,7 @@ package control;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import control.evento.InserisciEventoServlet;
 import java.io.IOException;
@@ -30,9 +31,100 @@ class InserisciEventoServletTC {
     response = new MockHttpServletResponse();
   }
 
+
+
   @Test
-  public void InserisciEventoServletTestConImmagine()
+  public void TC5_1_1() throws ServletException, IOException {
+    request.addParameter("Nome", "");
+    request.addParameter("Descrizione", "Descrizione di prova per evento di test");
+    request.addParameter("data_inizio", "2021-01-01");
+    request.addParameter("data_fine", "2021-02-02");
+    String message = "L'aggiunta dell'evento non va a buon fine poiche il campo Nome e vuoto";
+    IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+      servlet.doPost(request, response);
+    });
+    assertEquals(message, exception.getMessage());
+  }
+  @Test
+  public void TC5_1_2() throws ServletException, IOException {
+    request.addParameter("Nome", "evento");
+    request.addParameter("Descrizione", "Descrizione di prova per evento di test");
+    request.addParameter("data_inizio", "2021-01-01");
+    request.addParameter("data_fine", "2021-02-02");
+    String message = "L'aggiunta dell'evento non va a buon fine poiche il campo Nome non rispetta la lunghezza minima";
+    IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+      servlet.doPost(request, response);
+    });
+    assertEquals(message, exception.getMessage());
+  }
+  @Test
+  public void TC5_1_3() throws ServletException, IOException {
+    request.addParameter("Nome", "eventooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo");
+    request.addParameter("Descrizione", "Descrizione di prova per evento di test");
+    request.addParameter("data_inizio", "2021-01-01");
+    request.addParameter("data_fine", "2021-02-02");
+    String message = "L'aggiunta dell'evento non va a buon fine poiche il campo Nome non rispetta la lunghezza massima";
+    IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+      servlet.doPost(request, response);
+    });
+    assertEquals(message, exception.getMessage());
+  }
+  @Test
+  public void TC5_1_4() throws ServletException, IOException {
+    request.addParameter("Nome", "Evento di test");
+    request.addParameter("Descrizione", "");
+    request.addParameter("data_inizio", "2021-01-01");
+    request.addParameter("data_fine", "2021-02-02");
+    String message = "L'aggiunta dell'evento non va a buon fine poiche il campo descrizione e vuoto";
+    IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+      servlet.doPost(request, response);
+    });
+    assertEquals(message, exception.getMessage());
+  }
+
+  @Test
+  public void TC5_1_5() throws ServletException, IOException {
+    request.addParameter("Nome", "Evento di test");
+    request.addParameter("Descrizione", "descriz");
+    request.addParameter("data_inizio", "2021-01-01");
+    request.addParameter("data_fine", "2021-02-02");
+    String message = "L'aggiunta dell'evento non va a buon fine poiche il campo descrizione non rispetta la lunghezza minima.";
+    IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+      servlet.doPost(request, response);
+    });
+    assertEquals(message, exception.getMessage());
+  }
+  /*
+  @Test
+  public void TC5_1_6() throws ServletException, IOException {
+    request.addParameter("Nome", "Evento di test");
+    request.addParameter("Descrizione", "Descrizione > 5000");
+    request.addParameter("data_inizio", "2021-01-01");
+    request.addParameter("data_fine", "2021-02-02");
+    String message = "L'aggiunta dell'evento non va a buon fine poiche il campo descrizione non rispetta la lunghezza massima.";
+    IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+      servlet.doPost(request, response);
+    });
+    assertEquals(message, exception.getMessage());
+  }
+   */
+
+  @Test
+  public void TC5_1_7()
       throws ServletException, IOException, SQLException {
+    request.addParameter("Nome", "Evento di test");
+    request.addParameter("Descrizione", "Descrizione di prova per evento di test");
+    request.addParameter("data_inizio", "2021-01-01");
+    request.addParameter("data_fine", "2021-02-02");
+    servlet.doPost(request, response);
+    assertEquals("text/html", response.getContentType());
+    EventoBean bean = model.doRetrieveByName("Evento di test");
+    model.doDelete(bean);
+  }
+
+  @Test
+  public void TC5_1_8()
+  throws ServletException, IOException, SQLException {
     request.addParameter("Nome", "Evento di test");
     request.addParameter("Descrizione", "Descrizione di prova per evento di test");
     request.addParameter("data_inizio", "2021-01-01");
@@ -47,16 +139,42 @@ class InserisciEventoServletTC {
   }
 
   @Test
-  public void InserisciEventoServletTestSenzaImmagine() 
-      throws ServletException, IOException, SQLException {
+  public void TC5_1_10() throws ServletException, IOException {
+    request.addParameter("Nome", "Evento di test");
+    request.addParameter("Descrizione", "Descrizione");
+    request.addParameter("data_inizio", "");
+    request.addParameter("data_fine", "2021-02-02");
+    String message = "L'aggiunta dell'evento non va a buon fine poiche il campo data inizio e vuoto";
+    IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+      servlet.doPost(request, response);
+    });
+    assertEquals(message, exception.getMessage());
+  }
+  @Test
+  public void TC5_1_11()
+          throws ServletException, IOException, SQLException {
     request.addParameter("Nome", "Evento di test");
     request.addParameter("Descrizione", "Descrizione di prova per evento di test");
     request.addParameter("data_inizio", "2021-01-01");
-    request.addParameter("data_fine", "2021-02-02");
-    servlet.doPost(request, response);
-    assertEquals("text/html", response.getContentType());
-    EventoBean bean = model.doRetrieveByName("Evento di test");
-    model.doDelete(bean);
+    request.addParameter("data_fine", "");
+    String message = "L'aggiunta dell'evento non va a buon fine poiche il campo data fine e vuoto";
+    IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+      servlet.doPost(request, response);
+    });
+    assertEquals(message, exception.getMessage());
+  }
+  @Test
+  public void TC5_1_12()
+          throws ServletException, IOException, SQLException {
+    request.addParameter("Nome", "Evento di test");
+    request.addParameter("Descrizione", "Descrizione di prova per evento di test");
+    request.addParameter("data_inizio", "2021-01-01");
+    request.addParameter("data_fine", "2020-01-01");
+    String message = "L'aggiunta dell'evento non va a buon fine poiche il campo data fine contiene una data antecedente a data inizio";
+    IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+      servlet.doPost(request, response);
+    });
+    assertEquals(message, exception.getMessage());
   }
 
   @AfterEach

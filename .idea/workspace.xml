@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b5c7f6a-97b6-4822-9b02-795d943c24ad" name="Default Changelist" comment="Modifica classe AggiungiRecensione" />
+    <list default="true" id="5b5c7f6a-97b6-4822-9b02-795d943c24ad" name="Default Changelist" comment="Modificati nomi Test Case">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_11_42.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_222.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_10_18.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_7_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_2_12_RELEASE2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_2_12_RELEASE2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_2_12_RELEASE2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/ModificaEvento.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/ModificaEvento.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/control/InserisciEventoServletTC.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/control/InserisciEventoServletTC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/control/ModificaEventoServletTC.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/control/ModificaEventoServletTC.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,6 +50,10 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebContent/WEB-INF/web.xml" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1rgNVpn9fitPAjfeX4uwMZLpUJk" />
   <component name="ProjectViewState">
@@ -113,7 +129,10 @@
     </configuration>
     <configuration name="All in PocketMuseum_C09" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PocketMuseum_C09" />
+      <extension name="coverage" sample_coverage="false" />
       <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -159,13 +178,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JUnit.All in PocketMuseum_C09" />
+      <item itemvalue="JUnit.All in PocketMuseum_C09 (2)" />
+      <item itemvalue="JUnit.All in PocketMuseum_C09 (3)" />
+      <item itemvalue="JUnit.All in PocketMuseum_C09 (4)" />
+      <item itemvalue="JUnit.All in PocketMuseum_C09 (5)" />
+      <item itemvalue="Smart Tomcat.Unnamed" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in PocketMuseum_C09" />
         <item itemvalue="JUnit.All in PocketMuseum_C09 (5)" />
         <item itemvalue="JUnit.All in PocketMuseum_C09 (2)" />
         <item itemvalue="JUnit.All in PocketMuseum_C09 (4)" />
         <item itemvalue="JUnit.All in PocketMuseum_C09 (3)" />
-        <item itemvalue="JUnit.All in PocketMuseum_C09" />
       </list>
     </recent_temporary>
   </component>
@@ -243,6 +270,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Manutenzione UI/UX lato utente.&#10;Nuove interfacce:&#10;    Index.jsp,&#10;    Login.jsp, &#10;    UtentePP.jsp, &#10;    History.jsp, &#10;    UserData.jsp, &#10;    Events.jsp, &#10;    OpereTour.jsp, &#10;    Tour.jsp;&#10;&#10;New file css e js (assets/css, assets/js).&#10;&#10;Modificate HomepageServlet, ServletLogin e ServletLogout con nuovi reindirizzamenti&#10;Modificato Homepage.js (scripts.js) con nuovo reindirizzamento" />
@@ -254,8 +282,8 @@
     <option name="LAST_COMMIT_MESSAGE" value="Modifica classe AggiungiRecensione" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/PocketMuseum$All_in_PocketMuseum_C09.ic" NAME="All in PocketMuseum_C09 Coverage Results" MODIFIED="1623495622808" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/PocketMuseum$AggiungiRecensioneTC.ic" NAME="AggiungiRecensioneTC Coverage Results" MODIFIED="1623878863696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/PocketMuseum$All_in_PocketMuseum_C09.ic" NAME="All in PocketMuseum_C09 Coverage Results" MODIFIED="1624734191801" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/PocketMuseum$All_in_PocketMuseum_C09__5_.ic" NAME="All in PocketMuseum_C09 (5) Coverage Results" MODIFIED="1624548414308" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/PocketMuseum$All_in_PocketMuseum_C09__3_.ic" NAME="All in PocketMuseum_C09 (3) Coverage Results" MODIFIED="1623881244339" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/PocketMuseum$EliminaEventoTC_EliminaEvento.ic" NAME="EliminaEventoTC.EliminaEvento Coverage Results" MODIFIED="1623877514166" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

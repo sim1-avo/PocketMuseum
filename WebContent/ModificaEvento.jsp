@@ -70,7 +70,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light navbar-floating">
   <div class="container">
-    <a class="navbar-brand" href="GuidaPP.jsp">
+    <a class="navbar-brand" href="Opere.jsp">
       <img src="assets/logo.png" alt="" width="40">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
@@ -79,7 +79,7 @@
 
     <div class="collapse navbar-collapse" id="navbarToggler">
          <div class="ml-auto my-2 my-lg-0">
-                <a href="GuidaPP.jsp" ><button class="btn btn-primary rounded-pill" h> Indietro </button></a>
+                <a href="Eventi.jsp" ><button class="btn btn-primary rounded-pill" h> Indietro </button></a>
          </div>
     </div>
   </div>

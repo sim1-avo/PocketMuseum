@@ -29,16 +29,6 @@ public class ModificaEventoServlet extends HttpServlet {
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        //Controllo se qualche utente non 'guida' provi a modificare un evento
-        if(request.getSession().getAttribute("guida") == null ) {
-            response.sendRedirect("Login.jsp");
-            return;
-        }
-
-        if ( ! ModificaEventoServlet.checkParameters(request)) {
-            ModificaEventoServlet.getAlert("error", request);
-            ModificaEventoServlet.forwardRequest(request, response, "/Eventi.jsp");
-        }
 
         //Validate parameters
         ModificaEventoServlet.validateParametersServerSide(request);
@@ -52,43 +42,23 @@ public class ModificaEventoServlet extends HttpServlet {
         evento.setDescrizione(request.getParameter("Descrizione"));
         evento.setDataInizio(new Timestamp(dataInizio.getTime()));
         evento.setDataFine(new Timestamp(dataFine.getTime()));
-        if( ! request.getPart("Immagine").getSubmittedFileName().equals(""))
+        //if( ! request.getPart("Immagine").getSubmittedFileName().equals(""))
             evento.setImmaginePart(request.getPart("Immagine"));
 
         EventoModelDM modelEvent = new EventoModelDM();
         try {
             boolean resultUpdate = modelEvent.doUpdate(evento);
-            if(resultUpdate) {
-                ModificaEventoServlet.getAlert("success", request);
-                ModificaEventoServlet.forwardRequest(request, response, "/Eventi.jsp");
-            } else {
-                ModificaEventoServlet.getAlert("error", request);
-                ModificaEventoServlet.forwardRequest(request, response, "/Eventi.jsp");
-            }
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
         response.setContentType("text/html");
+        ModificaEventoServlet.forwardRequest(request, response, "/Eventi.jsp");
 
     }
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         this.doPost(req, resp);
-    }
-
-    /** Check if the parameters are setted
-     * @param req
-     * */
-    private static boolean checkParameters(HttpServletRequest req) throws ServletException, IOException {
-
-        //add here new check on parameters
-        return (req.getParameter("Nome") != null) &&
-                (req.getParameter("data_inizio") != null) &&
-                (req.getParameter("data_fine") != null) &&
-                (req.getParameter("Descrizione") != null) &&
-                (req.getPart("Immagine") != null) &&
-                (req.getParameter("idEvent") != null);
     }
 
     /** Forward request
@@ -100,27 +70,9 @@ public class ModificaEventoServlet extends HttpServlet {
         rd.forward(req, res);
     }
 
-    /** Set the type and the message of alert on the attributes of the
-     *  request.
-     *  @param req the request of the servlet
-     *  @param type the type of alert: for now is accepted only 'success' and 'error'. */
-    private static void getAlert(String type, HttpServletRequest req) {
-        if(type.equals("success")) {
-            String messageAlert = "<strong>Fatto!</strong> L'evento è stato modificato con successo.";
-            req.setAttribute("alertSuccess", true);
-            req.setAttribute("messageAlert", messageAlert);
-        } else if (type.equals("error")) {
-            String messageAlert = "<strong>Errore.</strong> Si è verificato un problema durante la modifica dell'evento.";
-            req.setAttribute("alertError", true);
-            req.setAttribute("messageAlert", messageAlert);
-        }
-    }
 
     /** Validation parameters Server Side */
     private static void validateParametersServerSide(HttpServletRequest req) throws ServletException, IOException {
-        if( ! ModificaEventoServlet.checkParameters(req))
-            throw new IllegalArgumentException("L'aggiunta dell'evento non "
-                    + "va a buon fine poiche uno o più parametri non sono stati passati o sono vuoti.");
 
         String nome = req.getParameter("Nome");
         String descrizione = req.getParameter("Descrizione");
@@ -168,13 +120,13 @@ public class ModificaEventoServlet extends HttpServlet {
         }
 
         //validate data inizio
-        if ((req.getParameter("data_inizio")).length() == 0) {
+        if ( req.getParameter("data_inizio").length() == 0 ) {
             throw new IllegalArgumentException("L'aggiunta dell'evento non "
                     + "va a buon fine poiche il campo data inizio e vuoto");
         }
 
         //validate data fine
-        if ((req.getParameter("data_fine")).length() == 0) {
+        if ( req.getParameter("data_fine").length() == 0) {
             throw new IllegalArgumentException("L'aggiunta dell'evento non "
                     + "va a buon fine poiche il campo data fine e vuoto");
         }

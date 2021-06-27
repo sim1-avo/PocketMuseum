@@ -4,17 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b5c7f6a-97b6-4822-9b02-795d943c24ad" name="Default Changelist" comment="Modificati nomi Test Case">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_11_42.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_222.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_10_18.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_7_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_2_12_RELEASE2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_2_12_RELEASE2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_2_12_RELEASE2.xml" beforeDir="false" />
+    <list default="true" id="5b5c7f6a-97b6-4822-9b02-795d943c24ad" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebContent/ModificaEvento.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/ModificaEvento.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/control/evento/EliminaEventoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/control/evento/EliminaEventoServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/control/evento/ModificaEventoPageServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/control/evento/ModificaEventoPageServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/control/evento/ModificaEventoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/control/evento/ModificaEventoServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/control/EliminaEventoTC.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/control/EliminaEventoTC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/control/InserisciEventoServletTC.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/control/InserisciEventoServletTC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/control/ModificaEventoPageServletTC.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/control/ModificaEventoPageServletTC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/control/ModificaEventoServletTC.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/control/ModificaEventoServletTC.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +92,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Smart Tomcat.Unnamed">
+  <component name="RunManager" selected="JUnit.All in PocketMuseum_C09">
     <configuration name="All in PocketMuseum_C09 (2)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PocketMuseum_C09" />
       <option name="PACKAGE_NAME" value="" />
@@ -254,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624549014577</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Modificati nomi Test Case">
+      <created>1624734368216</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1624734368216</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -279,11 +284,12 @@
     <MESSAGE value="Modifica Struttura page Utente, Guida e Biglietteria:&#10; -Elimainate pagine userpp.jsp, guidapp, biglietteriapp.jsp&#10; -Modificate nuove homepage: Guida: Opere.jjsp, Utente e Biglietteria: Tour.jsp&#10; -Modifica nelle servlet: reindirizzamento page con le nuove pagine&#10;Sistemato acquisto biglietto.&#10;&#10;Manutenzione UI/UX NavigationBar." />
     <MESSAGE value="Modifica UI/UX&#10;Inerita la visualizzazione delle recensioni&#10;Eliminazioni di file non utili." />
     <MESSAGE value="Modifica classe AggiungiRecensione" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modifica classe AggiungiRecensione" />
+    <MESSAGE value="Modificati nomi Test Case" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modificati nomi Test Case" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PocketMuseum$AggiungiRecensioneTC.ic" NAME="AggiungiRecensioneTC Coverage Results" MODIFIED="1623878863696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/PocketMuseum$All_in_PocketMuseum_C09.ic" NAME="All in PocketMuseum_C09 Coverage Results" MODIFIED="1624734191801" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/PocketMuseum$All_in_PocketMuseum_C09.ic" NAME="All in PocketMuseum_C09 Coverage Results" MODIFIED="1624792643467" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/PocketMuseum$All_in_PocketMuseum_C09__5_.ic" NAME="All in PocketMuseum_C09 (5) Coverage Results" MODIFIED="1624548414308" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/PocketMuseum$All_in_PocketMuseum_C09__3_.ic" NAME="All in PocketMuseum_C09 (3) Coverage Results" MODIFIED="1623881244339" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/PocketMuseum$EliminaEventoTC_EliminaEvento.ic" NAME="EliminaEventoTC.EliminaEvento Coverage Results" MODIFIED="1623877514166" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

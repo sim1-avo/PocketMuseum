@@ -2,6 +2,7 @@ package control;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import control.evento.EliminaEventoServlet;
 import java.io.IOException;
@@ -32,11 +33,28 @@ class EliminaEventoTC {
 
 
     @Test
+
+    public void EliminaEventonull() throws ServletException, IOException, SQLException {
+        request.addParameter("idEvent", "");
+        String message = "Il campo EventId è vuoto.";
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+            servlet.doGet(request, response);
+        });
+        assertEquals(message, exception.getMessage());
+    }
+    @Test
+    public void EliminaEventovuoto() throws ServletException, IOException, SQLException {
+        String message = "Il campo EventId è vuoto.";
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+            servlet.doGet(request, response);
+        });
+        assertEquals(message, exception.getMessage());
+    }
+
+    @Test
     public void EliminaEvento() throws ServletException, IOException, SQLException {
-        UtenteBean guida = new UtenteBean("guida@pocketmuseum.it", "admin", "", "", "guida", "");
-        request.getSession().setAttribute("guida", guida);
-        request.addParameter("idEvent", "33");
-        servlet.doGet(request, response);
+        request.addParameter("idEvent", "50");
+        servlet.doPost(request, response);
         assertEquals("text/html", response.getContentType());
     }
 

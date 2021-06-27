@@ -21,43 +21,26 @@ public class ModificaEventoPageServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         //Controllo se qualche utente non 'guida' provi ad eliminare un evento
-        if(request.getSession().getAttribute("guida") == null ) {
-            response.sendRedirect("Login.jsp");
-            return;
-        }
 
-        if ( ! ModificaEventoPageServlet.checkParameters(request)) {
-            ModificaEventoPageServlet.forwardRequest(request, response, "./GuidaPageServlet");
+        if(request.getParameter("idEvent") == null || request.getParameter("idEvent")==""){
+            throw new IllegalArgumentException("Il campo EventId è vuoto");
         }
 
         int idEvento = Integer.parseInt((String) request.getParameter("idEvent"));
         try {
             EventoBean evento = new EventoBean(idEvento);
-            if (evento == null) {
-                ModificaEventoPageServlet.forwardRequest(request, response, "./GuidaPageServlet");
-            } else {
                 request.setAttribute("evento", evento);
-                ModificaEventoPageServlet.forwardRequest(request, response, "./ModificaEvento.jsp");
-            }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
         response.setContentType("text/html");
+        ModificaEventoPageServlet.forwardRequest(request, response, "./ModificaEvento.jsp");
 
 
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         this.doPost(request, response);
-    }
-
-    /** Check if the parameters are setted
-     * @param req
-     * */
-    private static boolean checkParameters(HttpServletRequest req) {
-
-        //add here new check on parameters
-        return (req.getParameter("idEvent") != null) && (!((String)req.getParameter("idEvent")).equals(""));
     }
 
     /** Forward request
@@ -69,9 +52,6 @@ public class ModificaEventoPageServlet extends HttpServlet {
         rd.forward(req, res);
     }
 
-    /** Set the type and the message of alert on the attributes of the
-     *  request.
-     *  @param req the request of the servlet
-     *  @param type the type of alert: is accepted only 'error'. */
+
 
 }

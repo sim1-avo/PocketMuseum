@@ -5,10 +5,10 @@
 <%
 
     if(session.getAttribute("guida")==null){
-        response.sendRedirect("Log.jsp");
+        response.sendRedirect("Login.jsp");
         return;
     } else if (request.getAttribute("evento") == null) {
-        response.sendRedirect("GuidaPersonalPage.jsp");
+        response.sendRedirect("Opere.jsp");
         return;
     }
     EventoBean evento = (EventoBean) request.getAttribute("evento");
@@ -70,7 +70,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light navbar-floating">
   <div class="container">
-    <a class="navbar-brand" href="Opere.jsp">
+    <a class="navbar-brand" href="Eventi.jsp">
       <img src="assets/logo.png" alt="" width="40">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
